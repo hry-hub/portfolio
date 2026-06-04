@@ -1,0 +1,968 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Publishing Portfolio</title>
+
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+        height:100%;
+    overflow:hidden;
+    background:#111;
+    color:#fff;
+    font-family:Pretendard,sans-serif;
+
+    /*드래그막기*/
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+
+}
+
+img{
+    /*이미지 드래그 막기*/
+    -webkit-user-drag: none;
+    user-select: none;
+    /*pointer-events: none; /* 클릭도 막힘 */
+}
+
+
+a{
+    text-decoration:none;
+}
+
+.portfolio-wrap{
+height:100vh;
+
+    max-width:1800px;
+
+    margin:auto;
+
+    padding:40px;
+
+    display:flex;
+
+    flex-direction:column;
+}
+
+.portfolio-header{
+    margin-bottom:25px;
+}
+
+.portfolio-header h2{
+    font-size:56px;
+    font-weight:800;
+}
+
+.portfolio-header p{
+    color:#888;
+    margin-top:10px;
+}
+
+.portfolio-layout{
+    display:flex;
+    gap:40px;
+        flex:1;
+
+    min-height:0;
+}
+
+.logo-area{
+    width:40%;
+
+    height:100%;
+
+    overflow-y:auto;
+
+    padding-right:10px;
+}
+.logo-area::-webkit-scrollbar{
+    width:0;
+}
+
+.logo-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:10px;
+
+}
+
+.logo-item{
+    /* aspect-ratio:1/1; */
+    aspect-ratio:270/130;
+    background:#fff;
+    border:1px solid #222;
+    border-radius:18px;
+    overflow:hidden;
+    cursor:pointer;
+    opacity:0.1;
+    transition:.4s;
+}
+
+.logo-item:hover{
+    /* transform:translateY(-5px); */
+    border-color:#555;
+    opacity:1;
+}
+.logo-item:hover img {
+    filter:none;
+    opacity:1; 
+}
+
+.logo-item img{
+    width:100%;
+    height:100%;
+    object-fit:contain;
+    padding:20px;
+    filter:grayscale(100%);
+    opacity:.7;
+}
+
+.logo-item.active{
+    border:1px solid #fff;
+    box-shadow:0 0 25px rgba(255,255,255,.12);
+    opacity:1;
+}
+
+.logo-item.active img{
+    filter:none;
+    opacity:1;
+}
+
+.preview-area{
+
+    width:60%;
+
+    position:sticky;
+
+    top:30px;
+
+    height:fit-content;
+}
+
+.macdesign { }
+.macdesign img { width:100%; display:block; }
+
+.preview-card{
+
+    background:#181818;
+
+    border-radius:0 0 10px 10px;
+
+    overflow:hidden;
+
+    /* border:1px solid #222; */
+}
+
+.preview-image{
+
+    position:relative;
+
+    height:52vh;
+
+    overflow:hidden;
+
+    background:#000;
+}
+
+.preview-image img{
+
+    position:absolute;
+
+    top:0;
+    left:0;
+
+    width:100%;
+
+    height:auto;
+
+    transition:
+    transform 10s linear,
+    opacity .4s ease;
+}
+
+/* .glow{
+
+    position:absolute;
+
+    inset:0;
+
+    pointer-events:none;
+
+    background:
+    radial-gradient(
+    circle at center,
+    rgba(255,255,255,.12),
+    transparent 60%);
+} */
+
+.preview-content{
+    display:flex; 
+    justify-content: space-between;
+    align-items: center;
+    padding:35px;
+}
+
+.meta{
+
+    color:#777;
+
+    margin-bottom:15px;
+}
+
+.preview-content h3{
+
+    font-size:25px;
+    font-family: 'Pretendard', 'GmarketSans', 'Arial', sans-serif; 
+    /* margin-bottom:20px; */
+}
+
+.tags{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:8px;
+
+    margin-bottom:25px;
+}
+
+.tags span{
+
+    padding:8px 14px;
+
+    background:#222;
+
+    border-radius:100px;
+
+    font-size:13px;
+}
+
+.url{
+
+    color:#999;
+
+    margin-bottom:25px;
+
+    word-break:break-all;
+}
+
+.visit-btn{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    height:55px;
+
+    padding:0 30px;
+
+    border-radius:999px;
+
+    border:0.5px solid #fff;
+    color:#fff;
+
+    /* font-weight:700; */
+    transition:all .3s;
+}
+
+.visit-btn:hover{
+    background:red;
+    border:0.5px solid red; 
+
+    /* transform:translateY(-2px); */
+}
+
+@media(max-width:1200px){
+
+    /* .portfolio-layout{
+
+        flex-direction:column;
+    } */
+
+    .portfolio-header p { text-align:center; }
+    .preview-area{ display:none; }
+    .logo-area { width:100%; }
+    .logo-grid{ grid-template-columns:repeat(5,1fr); }
+
+}
+
+@media(max-width:768px){
+
+    .portfolio-wrap{
+
+        padding:40px 20px;
+    }
+
+    .portfolio-header h2{
+
+        font-size:34px;
+    }
+
+    .logo-grid{
+
+        grid-template-columns:repeat(4,1fr);
+    }
+
+
+
+}
+</style>
+</head>
+<body>
+
+<div class="portfolio-wrap">
+
+    <div class="portfolio-header">
+
+        <h2>Publishing Portfolio</h2>
+
+        <p>업체별 로고를 클릭하시면 확인 가능합니다.</p>
+
+    </div>
+
+    <div class="portfolio-layout">
+
+        <div class="logo-area">
+
+            <div id="logoGrid" class="logo-grid"></div>
+
+        </div>
+
+        <div class="preview-area">
+
+            <div class="macdesign">
+                <img src="img/publishing/macdesign2.png">
+            </div>
+            <div class="preview-card">
+
+                <div class="preview-image">
+
+                    <img id="previewImg">
+
+                    <div class="glow"></div>
+
+                </div>
+
+                <div class="preview-content">
+
+                    <!-- <div class="meta">
+
+                        <span id="previewYear"></span>
+
+                    </div> -->
+
+                    <h3 id="previewTitle"></h3>
+
+                    <!-- <div id="previewTags" class="tags"></div> -->
+
+                    <!-- <div id="previewUrl" class="url"></div> -->
+
+                    <a
+                    id="previewLink"
+                    target="_blank"
+                    class="visit-btn">
+
+                    홈페이지 바로가기
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script>
+const portfolioData = [
+
+    {
+        name:"(사)한국곰두리봉사회",
+        year:"2025",
+        tags:["Responsive","Brand"],
+        logo:"img/publishing/logo08.png",
+        image:"img/publishing/web_main08.png",
+        url:"http://igomdoori.com/"
+    },
+
+    {
+        name:"(주)켐피아",
+        year:"2025",
+        tags:["Responsive","Brand"],
+        logo:"img/publishing/logo26.png",
+        image:"img/publishing/web_main26.png",
+        url:"http://chempia.net/"
+    },
+    {
+        name:"(주)글로벌하우징",
+        year:"2025",
+        tags:["Responsive","Brand"],
+        logo:"img/publishing/logo44.png",
+        image:"img/publishing/web_main44.png",
+        url:"http://glbcnt.com/"
+    },
+
+    {
+        name:"수아이디",
+        year:"2025",
+        tags:["Responsive","Cafe"],
+        logo:"img/publishing/logo07.png",
+        image:"img/publishing/web_main07.png",
+        url:"https://suid-i.co.kr/"
+    },
+
+    {
+        name:"인터콤전자",
+        year:"2025",
+        tags:["Responsive","Brand"],
+        logo:"img/publishing/logo38.png",
+        image:"img/publishing/web_main38.png",
+        url:"http://intercomelec.co.kr/"
+    },
+
+    {
+        name:"우와도어",
+        year:"2025",
+        tags:["Responsive","Brand"],
+        logo:"img/publishing/logo02.png",
+        image:"img/publishing/web_main02.png",
+        url:"https://woowadoor.co.kr/"
+    },
+    
+    {
+        name:"엠엔텍",
+        year:"2024",
+        tags:["Responsive","Cafe"],
+        logo:"img/publishing/logo09.png",
+        image:"img/publishing/web_main09.png",
+        url:"http://mntek.net/"
+    },
+
+    {
+        name:"씨피케이",
+        year:"2025",
+        tags:["Responsive","Cafe"],
+        logo:"img/publishing/logo25.png",
+        image:"img/publishing/web_main25.png",
+        url:"https://modoocpk.cafe24.com/"
+    },
+
+
+    {
+        name:"택이네",
+        year:"2025",
+        tags:["Responsive","Cafe"],
+        logo:"img/publishing/logo04.png",
+        image:"img/publishing/web_main04.png",
+        url:"https://xn--950b363bqug.com/new/"
+    },
+
+    {
+        name:"아이원",
+        year:"2025",
+        tags:["Responsive","Cafe"],
+        logo:"img/publishing/logo13.png",
+        image:"img/publishing/web_main13.png",
+        url:"https://ioneedu.co.kr/"
+    },
+
+    {
+        name:"수원외식관광직업전문학교",
+        year:"2025",
+        tags:["Responsive","Brand"],
+        logo:"img/publishing/logo14.png",
+        image:"img/publishing/web_main14.png",
+        url:"http://cookiecook.co.kr/"
+    },
+
+    {
+        name:"(사)한국나눔사랑봉사연맹",
+        year:"2025",
+        tags:["Responsive","Brand"],
+        logo:"img/publishing/logo17.png",
+        image:"img/publishing/web_main17.png",
+        url:"http://xn--3e0b33du6au2l8um1h4a.kr/"
+    },
+
+    {
+        name:"히트산업",
+        year:"2024",
+        tags:["Responsive","Cafe"],
+        logo:"img/publishing/logo06.png",
+        image:"img/publishing/web_main06.png",
+        url:"http://e-hitt.com/"
+    },
+
+
+    {
+        name:"예지리플렉스",
+        year:"2025",
+        tags:["Responsive","Brand"],
+        logo:"img/publishing/logo23.png",
+        image:"img/publishing/web_main23.png",
+        url:"http://yezi.biz/kor/"
+    },
+
+    {
+        name:"태성",
+        year:"2024",
+        tags:["Responsive","Cafe"],
+        logo:"img/publishing/logo39.png",
+        image:"img/publishing/web_main39.png",
+        url:"http://taisung.co.kr/"
+    },
+
+    {
+        name:"한국사회경제연구원",
+        year:"2025",
+        tags:["Responsive","Cafe"],
+        logo:"img/publishing/logo34.png",
+        image:"img/publishing/web_main34.png",
+        url:"http://www.ksei.kr/"
+    },
+
+    {
+        name:"항사랑외과",
+        year:"2025",
+        tags:["Responsive","Brand"],
+        logo:"img/publishing/logo35.png",
+        image:"img/publishing/web_main35.png",
+        url:"https://hanglove.co.kr/"
+    },
+
+    {
+        name:"본테크",
+        year:"2025",
+        tags:["Responsive","Cafe"],
+        logo:"img/publishing/logo10.png",
+        image:"img/publishing/web_main10.png",
+        url:"https://modoobontech.cafe24.com/"
+    },
+
+    {
+        name:"파코팩",
+        year:"2025",
+        tags:["Responsive","Brand"],
+        logo:"img/publishing/logo32.png",
+        image:"img/publishing/web_main32.png",
+        url:"http://ppstrap.net/"
+    },
+
+    {
+        name:"(사)한국조리사협회 울산지회",
+        year:"2024",
+        tags:["Responsive","Cafe"],
+        logo:"img/publishing/logo12.png",
+        image:"img/publishing/web_main12.png",
+        url:"http://ulsancook.co.kr/"
+    },
+
+    {
+        name:"고도",
+        year:"2024",
+        tags:["Responsive","Cafe"],
+        logo:"img/publishing/logo15.png",
+        image:"img/publishing/web_main15.png",
+        url:"http://godotrade.co.kr/"
+    },
+
+        {
+        name:"삼우단조",
+        year:"2025",
+        tags:["Responsive","Cafe"],
+        logo:"img/publishing/logo16.png",
+        image:"img/publishing/web_main16.png",
+        url:"https://modooswm.cafe24.com/"
+    },
+
+    {
+        name:"스텔라실버요양원",
+        year:"2025",
+        tags:["Responsive","Cafe"],
+        logo:"img/publishing/logo28.png",
+        image:"img/publishing/web_main28.png",
+        url:"http://stellarsilver.co.kr/"
+    },
+
+    {
+        name:"프로핏",
+        year:"2025",
+        tags:["Responsive","Brand"],
+        logo:"img/publishing/logo05.png",
+        image:"img/publishing/web_main05.png",
+        url:"http://pro-fit.kr/"
+    },
+
+    {
+        name:"지비에너지",
+        year:"2025",
+        tags:["Responsive","Cafe"],
+        logo:"img/publishing/logo19.png",
+        image:"img/publishing/web_main19.png",
+        url:"http://gbenergy.co.kr/"
+    },
+
+    {
+        name:"한신콤프렛서",
+        year:"2025",
+        tags:["Responsive","Brand"],
+        logo:"img/publishing/logo20.png",
+        image:"img/publishing/web_main20.png",
+        url:"http://hsairbank.com/"
+    },
+
+    {
+        name:"디자인제일",
+        year:"2024",
+        tags:["Responsive","Cafe"],
+        logo:"img/publishing/logo21.png",
+        image:"img/publishing/web_main21.png",
+        url:"http://xn--2z1bu26ama2fv8a.kr/"
+    },
+
+    {
+        name:"제이엘푸드",
+        year:"2025",
+        tags:["Responsive","Cafe"],
+        logo:"img/publishing/logo22.png",
+        image:"img/publishing/web_main22.png",
+        url:"http://jl-food.co.kr/"
+    },
+
+    {
+        name:"한국스틸웨어",
+        year:"2025",
+        tags:["Responsive","Cafe"],
+        logo:"img/publishing/logo01.png",
+        image:"img/publishing/web_main01.png",
+        url:"http://koreasw.co.kr/"
+    },
+
+    {
+        name:"(주)조은사업",
+        year:"2024",
+        tags:["Responsive","Cafe"],
+        logo:"img/publishing/logo03.png",
+        image:"img/publishing/web_main03.png",
+        url:"http://goodsanup.com/"
+    },
+
+    {
+        name:"(재)성호장학재단",
+        year:"2024",
+        tags:["Responsive","Cafe"],
+        logo:"img/publishing/logo24.png",
+        image:"img/publishing/web_main24.png",
+        url:"https://modooshsf.cafe24.com/"
+    },
+
+    {
+        name:"아주프라텍",
+        year:"2025",
+        tags:["Responsive","Brand"],
+        logo:"img/publishing/logo29.png",
+        image:"img/publishing/web_main29.png",
+        url:"http://danpla.net/"
+    },
+
+        {
+        name:"전국노동자총연맹",
+        year:"2025",
+        tags:["Responsive","Brand"],
+        logo:"img/publishing/logo11.png",
+        image:"img/publishing/web_main11.png",
+        url:"http://kwu.or.kr/"
+    },
+
+    {
+        name:"비젼21투어",
+        year:"2024",
+        tags:["Responsive","Cafe"],
+        logo:"img/publishing/logo18.png",
+        image:"img/publishing/web_main18.png",
+        url:"http://xn--21-972jx9vridgqu.kr/"
+    },
+
+    {
+        name:"금성콘크리트",
+        year:"2024",
+        tags:["Responsive","Cafe"],
+        logo:"img/publishing/logo30.png",
+        image:"img/publishing/web_main30.png",
+        url:"http://ksconcrete.co.kr/"
+    },
+
+    {
+        name:"알파라이팅코리아",
+        year:"2024",
+        tags:["Responsive","Cafe"],
+        logo:"img/publishing/logo42.png",
+        image:"img/publishing/web_main42.png",
+        url:"http://alphalightingkr.com/"
+    },
+
+    {
+        name:"크린팩",
+        year:"2025",
+        tags:["Responsive","Cafe"],
+        logo:"img/publishing/logo37.png",
+        image:"img/publishing/web_main37.png",
+        url:"http://cleanpack.kr/"
+    },
+
+    {
+        name:"파트너이앤지",
+        year:"2024",
+        tags:["Responsive","Cafe"],
+        logo:"img/publishing/logo36.png",
+        image:"img/publishing/web_main36.png",
+        url:"https://partnereng.co.kr/"
+    },
+
+    {
+        name:"한양삼미식품기계",
+        year:"2025",
+        tags:["Responsive","Cafe"],
+        logo:"img/publishing/logo31.png",
+        image:"img/publishing/web_main31.png",
+        url:"http://sammieng.co.kr/"
+    },
+
+    {
+        name:"코리아에너텍",
+        year:"2025",
+        tags:["Responsive","Cafe"],
+        logo:"img/publishing/logo40.png",
+        image:"img/publishing/web_main40.png",
+        url:"http://ket22.com/"
+    },
+
+    {
+        name:"하나초음파",
+        year:"2024",
+        tags:["Responsive","Cafe"],
+        logo:"img/publishing/logo33.png",
+        image:"img/publishing/web_main33.png",
+        url:"http://hanasonic.com/"
+    },
+
+    {
+        name:"일선",
+        year:"2024",
+        tags:["Responsive","Cafe"],
+        logo:"img/publishing/logo27.png",
+        image:"img/publishing/web_main27.png",
+        url:"http://ilsun.co.kr/"
+    },
+
+    {
+        name:"정밀",
+        year:"2025",
+        tags:["Responsive","Cafe"],
+        logo:"img/publishing/logo43.png",
+        image:"img/publishing/web_main43.png",
+        url:"http://jipr.kr/"
+    }
+
+    // {
+    //     name:"밤여우머니",
+    //     year:"2025",
+    //     tags:["Responsive","Brand"],
+    //     logo:"img/publishing/logo41.png",
+    //     image:"img/publishing/web_main41.png",
+    //     url:"https://modooqzr.cafe24.com/"
+    // }
+];
+
+/*
+----------------------------------
+로고 생성
+----------------------------------
+*/
+
+portfolioData.forEach((item,index)=>{
+
+    $('#logoGrid').append(`
+
+        <div
+        class="logo-item"
+        data-index="${index}">
+
+            <img src="${item.logo}">
+
+        </div>
+
+    `);
+
+});
+
+/*
+----------------------------------
+프로젝트 변경
+----------------------------------
+*/
+
+function showProject(index){
+
+    const item = portfolioData[index];
+
+    const img = document.getElementById('previewImg');
+
+img.style.transition = 'none';
+
+img.style.transform = 'translateY(0)';
+
+    $('#previewImg').css('opacity','0');
+
+setTimeout(()=>{
+
+    $('#previewImg')
+    .attr('src',item.image)
+    .css({
+        opacity:1
+    });
+
+},50);
+
+    $('#previewTitle').text(item.name);
+
+    $('#previewYear').text(item.year);
+
+    $('#previewUrl').text(item.url);
+
+    $('#previewLink').attr('href',item.url);
+
+    let tagHTML='';
+
+    item.tags.forEach(tag=>{
+
+        tagHTML += `<span>${tag}</span>`;
+
+    });
+
+    $('#previewTags').html(tagHTML);
+
+    $('.logo-item').removeClass('active');
+
+    $('.logo-item').eq(index).addClass('active');
+
+}
+
+/*
+----------------------------------
+PC 클릭
+모바일 링크이동
+----------------------------------
+*/
+
+$(document).on('click','.logo-item',function(){
+
+    const index=$(this).data('index');
+
+    const item=portfolioData[index];
+
+    if(window.innerWidth <= 768){
+
+        window.open(item.url,'_blank');
+
+        return;
+    }
+
+    showProject(index);
+
+});
+
+/*
+----------------------------------
+스크롤 프리뷰
+----------------------------------
+*/
+
+$('.preview-image').on('mouseenter',function(){
+
+    const img = $(this).find('img')[0];
+
+    const move =
+    img.offsetHeight -
+    this.offsetHeight;
+
+    if(move > 0){
+
+        const duration =
+        move / 500;
+
+        img.style.transition =
+        `transform ${duration}s linear`;
+
+        img.style.transform =
+        `translateY(-${move}px)`;
+
+    }
+
+});
+
+$('.preview-image').on('mouseleave',function(){
+
+    const img=$(this).find('img')[0];
+
+    img.style.transition =
+    'transform .5s ease';
+
+    img.style.transform =
+    'translateY(0)';
+});
+
+/*
+----------------------------------
+Glow
+----------------------------------
+*/
+
+$('.preview-image').on('mousemove',function(e){
+
+    const x=e.offsetX;
+
+    const y=e.offsetY;
+
+    $('.glow').css({
+
+        background:
+        `radial-gradient(
+        circle at ${x}px ${y}px,
+        rgba(255,255,255,.15),
+        transparent 45%)`
+
+    });
+
+});
+
+/*
+----------------------------------
+초기
+----------------------------------
+*/
+
+showProject(0);
+</script>
+
+</body>
+</html>

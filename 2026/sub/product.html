@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PRODUCT PAGE | 상세페이지</title>
+<meta property="og:image" content="myimage.jpg">
+<link rel="SHORTCUT ICON" href="favicon.ico" />
+<meta name="description" content="SUNHEE 포트폴리오">
+<meta property="og:description" content="SUNHEE 포트폴리오">
+
+<!--CSS-->
+<link rel="stylesheet" href="css/fonts.css" type="text/css">
+
+<style>
+body {
+  margin: 0;
+  background: #111;
+  color: white;
+  font-family: 'Pretendard', 'GmarketSans', 'Arial', sans-serif;  
+}
+
+/* 탭 */
+.tabs {
+  display: flex;
+  gap: 10px;
+  padding: 20px;
+  flex-wrap: wrap;
+}
+
+.tab {
+  padding: 10px 16px;
+  background: #333;
+  border-radius: 999px;
+  cursor: pointer;
+  transition:all .3s; 
+}
+
+.tab.active {
+  background: red;
+}
+
+.tab:hover { background:red; }
+
+/* 레이아웃 */
+.container {
+  display: flex;
+  gap: 60px;
+  padding: 40px;
+}
+
+/* 왼쪽 */
+.left {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+/* 텍스트 */
+.text-area h2 {
+  margin: 0;
+  font-size: 28px;
+}
+
+.text-area p {
+  opacity: 0.7;
+  line-height: 1;
+  display:none; /*설명 가림 - 나중에 설명 추가하고 싶을 시 삭제*/
+}
+
+/* 폰 이미지 */
+.phone {
+  text-align: center;
+}
+
+.phone img {
+  width: 260px;
+}
+
+/* 오른쪽 */
+.right {
+  flex: 2.5; /* 🔥 더 크게 */
+}
+
+/* 4분할 */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.block {
+  height: 700px; /* 🔥 더 길게 */
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-radius: 12px;
+}
+
+/* 모바일 */
+.mobile-full {
+  display: none;
+}
+
+.mobile-full img {
+  width: 100%;
+}
+
+/* 반응형 */
+@media (max-width: 900px) {
+
+  .container {
+    flex-direction: column;
+    padding: 20px;
+    gap: 30px;
+  }
+
+  .left {
+    order: 1;
+  }
+
+  .right {
+    order: 2;
+  }
+
+  .grid {
+    display: none;
+  }
+
+  .phone {
+    display: none;
+  }
+
+  .mobile-full {
+    display: block;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- 탭 -->
+<div class="tabs">
+  <div class="tab active" data-index="0">01</div>
+  <div class="tab" data-index="1">02</div>
+  <div class="tab" data-index="2">03</div>
+  <div class="tab" data-index="3">04</div>
+  <div class="tab" data-index="4">05</div>
+  <div class="tab" data-index="5">06</div>
+</div>
+
+<div class="container">
+
+  <!-- 왼쪽 -->
+  <div class="left">
+
+    <div class="text-area">
+      <h2 id="title"></h2>
+      <p id="desc"></p>
+      <span style="font-size:13px; background:#222; padding:5px 10px; display:inline-block; margin-top:10px;">*고해상도 이미지로 인해 로딩이 다소 느릴 수 있습니다.</span>
+    </div>
+
+    <div class="phone">
+      <img id="phoneImg" src="">
+    </div>
+
+  </div>
+
+  <!-- 오른쪽 -->
+  <div class="right">
+
+    <!-- 4분할 -->
+    <div class="grid">
+      <div class="block" id="b1"></div>
+      <div class="block" id="b2"></div>
+      <div class="block" id="b3"></div>
+      <div class="block" id="b4"></div>
+    </div>
+
+    <!-- 모바일 -->
+    <div class="mobile-full">
+      <img id="mobileImg" src="">
+    </div>
+
+  </div>
+
+</div>
+
+<script>
+// 데이터
+const pages = [
+  {
+    phone: 'img/product/phone01.png',
+    img: 'img/product/page01.jpg',
+    title: 'JM 로스팅 공장 투어',
+    desc: '제이엠그룹 로스팅 공장 투어 프로그램 페이지.',
+    pos: ['0 0%', '0 25%', '0 60%', '0 100%']
+  },
+  {
+    phone: 'img/product/phone02.png',
+    img: 'img/product/page02.png',
+    title: '아이뮨랩 메가루테인',
+    desc: '루테인 영양제 상세페이지.',
+    pos: ['0 12%', '0 38.2%', '0 83.3%', '0 100%']
+  },
+  {
+    phone: 'img/product/phone03.png',
+    img: 'img/product/page03.png',
+    title: '백년뒤앤 몰입',
+    desc: '집중력 영양제 상세페이지.',
+    pos: ['0 9%', '0 49%', '0 67%', '0 93.5%']
+  },
+  {
+    phone: 'img/product/phone04.png',
+    img: 'img/product/page04.png',
+    title: '백년뒤앤 중심',
+    desc: '균형 영양제 상세페이지.',
+    pos: ['0 0%', '0 45%', '0 75%', '0 98%']
+  },
+  {
+    phone: 'img/product/phone05.png',
+    img: 'img/product/page05.png',
+    title: '키르메스 라바텐 프리미엄',
+    desc: '키 영양제 상세페이지.',
+    pos: ['0 0%', '0 33.5%', '0 54.3%', '0 78%']
+  },
+  {
+    phone: 'img/product/phone06.png',
+    img: 'img/product/page06.png',
+    title: '백년뒤앤 비타민D',
+    desc: '비타민D 영양제 상세페이지.',
+    pos: ['0 0%', '0 18.3%', '0 73.5%', '0 89%']
+  }
+];
+
+// 요소
+const tabs = document.querySelectorAll('.tab');
+const phoneImg = document.getElementById('phoneImg');
+const mobileImg = document.getElementById('mobileImg');
+const title = document.getElementById('title');
+const desc = document.getElementById('desc');
+
+const blocks = [
+  document.getElementById('b1'),
+  document.getElementById('b2'),
+  document.getElementById('b3'),
+  document.getElementById('b4')
+];
+
+// 렌더
+function render(i) {
+  const p = pages[i];
+
+  phoneImg.src = p.phone;
+  mobileImg.src = p.img;
+  title.innerText = p.title;
+  desc.innerText = p.desc;
+
+  blocks.forEach((el, idx) => {
+    el.style.backgroundImage = `url(${p.img})`;
+    el.style.backgroundPosition = p.pos[idx];
+  });
+}
+
+render(0);
+
+// 이벤트
+tabs.forEach(tab => {
+  tab.addEventListener('click', () => {
+
+    tabs.forEach(t => t.classList.remove('active'));
+    tab.classList.add('active');
+
+    render(tab.dataset.index);
+  });
+});
+</script>
+
+</body>
+</html>
