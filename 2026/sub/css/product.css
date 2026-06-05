@@ -1,0 +1,6 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+li { list-style:none; }
+address,em,i { font-style:normal; }
+a { text-decoration: none; color:#333; }
+
+body { margin: 0; background: #111; color: white; font-family: 'Pretendard', 'GmarketSans', 'Arial', sans-serif; }
