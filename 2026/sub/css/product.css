@@ -1,6 +1,121 @@
-* { box-sizing: border-box; margin: 0; padding: 0; }
-li { list-style:none; }
-address,em,i { font-style:normal; }
-a { text-decoration: none; color:#333; }
+/* 상세페이지 css */
 
-body { margin: 0; background: #111; color: white; font-family: 'Pretendard', 'GmarketSans', 'Arial', sans-serif; }
+body { margin: 0; background: #111; color: white; }
+
+/*=============================*/
+
+/* 탭 */
+.tabs {
+  display: flex;
+  gap: 10px;
+  padding: 20px;
+  flex-wrap: wrap;
+}
+
+.tab {
+  padding: 10px 16px;
+  background: #333;
+  border-radius: 999px;
+  cursor: pointer;
+  transition:all .3s; 
+}
+
+.tab.active {
+  background: red;
+}
+
+.tab:hover { background:red; }
+
+/* 레이아웃 */
+.container {
+  display: flex;
+  gap: 60px;
+  padding: 40px;
+}
+
+/* 왼쪽 */
+.left {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+/* 텍스트 */
+.text-area h2 {
+  margin: 0;
+  font-size: 28px;
+}
+
+.text-area p {
+  opacity: 0.7;
+  line-height: 1;
+  display:none; /*설명 가림 - 나중에 설명 추가하고 싶을 시 삭제*/
+}
+
+/* 폰 이미지 */
+.phone {
+  text-align: center;
+}
+
+.phone img {
+  width: 260px;
+}
+
+/* 오른쪽 */
+.right {
+  flex: 2.5; /* 🔥 더 크게 */
+}
+
+/* 4분할 */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.block {
+  height: 700px; /* 🔥 더 길게 */
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-radius: 12px;
+}
+
+/* 모바일 */
+.mobile-full {
+  display: none;
+}
+
+.mobile-full img {
+  width: 100%;
+}
+
+/* 반응형 */
+@media (max-width: 900px) {
+
+  .container {
+    flex-direction: column;
+    padding: 20px;
+    gap: 30px;
+  }
+
+  .left {
+    order: 1;
+  }
+
+  .right {
+    order: 2;
+  }
+
+  .grid {
+    display: none;
+  }
+
+  .phone {
+    display: none;
+  }
+
+  .mobile-full {
+    display: block;
+  }
+}
