@@ -209,7 +209,10 @@ body{ overflow-x:hidden; height:200vh; }
   margin-bottom:25px;
   color:#cdcdcd; 
   text-shadow : 0px 0px 5px rgba(0,0,0,1);
+  word-break: keep-all;
 }
+
+.inner p .mobile { display:none; }
 
 .inner a{
   display:inline-block;
@@ -245,6 +248,8 @@ body{ overflow-x:hidden; height:200vh; }
 .bg3{background : linear-gradient(rgba(0,0,0,0.9), rgba(0,0,0,0.9)), url('../img/BG_publishing.png') 80% center / cover no-repeat; }
 .bg4{background : linear-gradient(rgba(0,0,0,0.9), rgba(0,0,0,0.9)), url('../img/BG_video.png') 100% center / cover no-repeat;}
 .bg5{background : linear-gradient(rgba(0,0,0,0.9), rgba(0,0,0,0.9)), url('../img/BG_sns.png') 95% 0%/ cover no-repeat;}
+
+.inner p .mobile { display:block; }
 
 }
 
