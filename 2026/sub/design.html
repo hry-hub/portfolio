@@ -1,122 +1,64 @@
 <!DOCTYPE html>
 <html lang="ko">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>SUNHEE | 포트폴리오</title>
-  <meta property="og:image" content="myimage.jpg">
-  <link rel="SHORTCUT ICON" href="favicon.ico" />
-  <meta name="description" content="SUNHEE 포트폴리오">
-  <meta property="og:description" content="SUNHEE 포트폴리오">
+	<head>
+  		<meta charset="UTF-8" />
+  		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  		<title>DESIGN | 디자인 작업물</title>
+  		<meta property="og:image" content="myimage.jpg">
+  		<link rel="SHORTCUT ICON" href="../favicon.ico" />
+  		<meta name="description" content="SUNHEE 포트폴리오">
+  		<meta property="og:description" content="SUNHEE 포트폴리오">
 
-  <style>
-    body {
-      margin: 0;
-      background: #111;
-      font-family: sans-serif;
-    }
+          <!--CSS-->
+        <link rel="stylesheet" href="../css/style.css" type="text/css">
+        <link rel="stylesheet" href="css/sns.css" type="text/css">
+        <link rel="stylesheet" href="../css/fonts.css" type="text/css">
 
-    .gallery {
-      column-count: 6;
-      column-gap: 16px;
-      padding: 20px;
-    }
+	</head>
 
-    .item {
-      margin-bottom: 16px;
-      break-inside: avoid;
-      cursor: pointer;
-      transition: transform 0.2s ease;
-    }
+	<body>
 
-    .item:hover {
-      transform: scale(1.02);
-    }
+		<div class="gallery">
 
-    .item img {
-      width: 100%;
-      border-radius: 12px;
-      display: block;
-    }
+			<div class="item"><img src="img/design/jm_poster02.jpg"></div>
+			<div class="item"><img src="img/design/jm_card01.jpg"></div>
+			<div class="item"><img src="img/design/jm_xbanner01.jpg"></div>
+			<div class="item"><img src="img/design/jm_xbanner02.jpg"></div>
+			<div class="item"><img src="img/design/jm_poster01.jpg"></div>
+			<div class="item"><img src="img/design/jm_poster03.jpg"></div>
+			<div class="item"><img src="img/design/jm_poster04.jpg"></div>
+			<div class="item"><img src="img/design/jm_poster02.jpg"></div>
+			<div class="item"><img src="img/design/jm_xbanner03.jpg"></div>
+			<div class="item"><img src="img/design/jm_product01.jpg"></div>
+			<div class="item"><img src="img/design/jm_poster02.jpg"></div>
+			<div class="item"><img src="img/design/jm_poster02.jpg"></div>
 
-    /* 반응형 */
-    @media (max-width: 1200px) {
-      .gallery { column-count: 3; }
-    }
+		</div>
 
-    @media (max-width: 768px) {
-      .gallery { column-count: 2; }
-    }
+		<!-- Lightbox -->
+		<div id="lightbox" class="lightbox">
+			<img id="lightbox-img" />
+		</div>
 
-    @media (max-width: 480px) {
-      .gallery { column-count: 1; }
-    }
+		<script>
+			const items = document.querySelectorAll('.item');
+			const lightbox = document.getElementById('lightbox');
+			const lightboxImg = document.getElementById('lightbox-img');
 
-    /* Lightbox */
-    .lightbox {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0,0,0,0.9);
-      display: none;
-      align-items: center;
-      justify-content: center;
-      z-index: 999;
-    }
+			// 이미지 클릭 → 확대
+			items.forEach(item => {
+				item.addEventListener('click', () => {
+				const img = item.querySelector('img');
+				lightboxImg.src = img.src;
+				lightbox.style.display = 'flex';
+				});
+			});
 
-    .lightbox img {
-      max-width: 90%;
-      max-height: 90%;
-      border-radius: 10px;
-    }
-  </style>
-</head>
+			// 바깥 클릭 → 닫기
+			lightbox.addEventListener('click', () => {
+				lightbox.style.display = 'none';
+			});
+		</script>
 
-<body>
-
-<div class="gallery">
-
-  <div class="item"><img src="img/design/jm_poster02.jpg"></div>
-  <div class="item"><img src="img/design/jm_card01.jpg"></div>
-  <div class="item"><img src="img/design/jm_xbanner01.jpg"></div>
-  <div class="item"><img src="img/design/jm_xbanner02.jpg"></div>
-  <div class="item"><img src="img/design/jm_poster01.jpg"></div>
-  <div class="item"><img src="img/design/jm_poster03.jpg"></div>
-  <div class="item"><img src="img/design/jm_poster04.jpg"></div>
-  <div class="item"><img src="img/design/jm_poster02.jpg"></div>
-  <div class="item"><img src="img/design/jm_xbanner03.jpg"></div>
-  <div class="item"><img src="img/design/jm_product01.jpg"></div>
-  <div class="item"><img src="img/design/jm_poster02.jpg"></div>
-  <div class="item"><img src="img/design/jm_poster02.jpg"></div>
-
-</div>
-
-<!-- Lightbox -->
-<div id="lightbox" class="lightbox">
-  <img id="lightbox-img" />
-</div>
-
-<script>
-  const items = document.querySelectorAll('.item');
-  const lightbox = document.getElementById('lightbox');
-  const lightboxImg = document.getElementById('lightbox-img');
-
-  // 이미지 클릭 → 확대
-  items.forEach(item => {
-    item.addEventListener('click', () => {
-      const img = item.querySelector('img');
-      lightboxImg.src = img.src;
-      lightbox.style.display = 'flex';
-    });
-  });
-
-  // 바깥 클릭 → 닫기
-  lightbox.addEventListener('click', () => {
-    lightbox.style.display = 'none';
-  });
-</script>
-
-</body>
+	</body>
 </html>
