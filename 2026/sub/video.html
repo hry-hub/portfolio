@@ -149,7 +149,7 @@ body{
     <img src="img/video/youtube01.jpg">
   </div>
 
-  <div class="item" data-type="youtube" data-category="youtube" data-src="https://www.youtube.com/embed/tO7bbDZonC4">
+  <div class="item" data-type="youtube" data-category="youtube" data-src="https://www.youtube.com/embed/zQmhG4E">
     <img src="img/video/youtube02.jpg">
   </div>
 
@@ -250,8 +250,6 @@ body{
       <div class="item" data-type="video" data-category="reels" data-src="img/video/reels23.mp4">
     <img src="img/video/reels23.jpg">
   </div>
-  
-  
 
 </div>
 
@@ -423,7 +421,7 @@ if(type === "youtube"){
     <iframe
       width="900"
       height="500"
-      src="${src}?autoplay=1&mute=1&rel=0"
+      src="${src}?autoplay=1&mute=0&rel=0"
       title="YouTube video player"
       frameborder="0"
       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -433,7 +431,7 @@ if(type === "youtube"){
 }
 
   if(type === "video"){
-    content.innerHTML = `<video controls autoplay muted><source src="${src}" type="video/mp4"></video>`;
+    content.innerHTML = `<video controls autoplay><source src="${src}" type="video/mp4"></video>`;
   }
 
   lightbox.style.display = "flex";
