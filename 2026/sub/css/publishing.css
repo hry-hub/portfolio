@@ -62,7 +62,7 @@ body{ height:100%; overflow:hidden; background:#111; color:#fff; }
     border-radius:18px;
     overflow:hidden;
     cursor:pointer;
-    opacity:0.1;
+    opacity:0.5;
     transition:.4s;
 }
 

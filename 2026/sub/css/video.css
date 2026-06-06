@@ -1,0 +1,112 @@
+/* 영상편집 css */
+body { background:#111; }
+
+/*=============================*/
+
+/* ===== 카테고리 ===== */
+.category{
+  text-align:center;
+  padding:30px 20px 10px;
+}
+
+.category button{
+  background:none;
+  border:1px solid #fff;
+  color:#fff;
+  padding:10px 20px;
+  margin:5px;
+  cursor:pointer;
+  border-radius:20px;
+  transition:all .3s;
+}
+
+.category button.active,
+.category button:hover{
+  background:red;
+  border:1px solid red;
+  color:#fff;
+}
+
+/* ===== Masonry ===== */
+.gallery{
+  display:flex;
+  gap:16px;
+  padding:20px;
+}
+
+.column{
+  flex:1;
+  display:flex;
+  flex-direction:column;
+  gap:16px;
+}
+
+.item{
+  cursor:pointer;
+  position:relative;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+    .item:hover {
+      transform: scale(1.02);
+    }
+    .item:hover::after { background:red; }
+
+
+.item img{
+  width:100%;
+  display:block;
+  border-radius:10px;
+}
+
+/* ▶ 아이콘 */
+.item::after{
+  content:"▶";
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  font-size:30px;
+  background:rgba(0,0,0,0.6);
+  width:50px;
+  height:50px;
+  line-height:55px; 
+  text-align:center;
+  /* display:flex;
+  align-items:center;
+  justify-content:center; */
+  border-radius:50%;
+  transition: all 0.2s ease;
+}
+
+/* ===== Lightbox ===== */
+.lightbox{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,0.9);
+  display:none;
+  align-items:center;
+  justify-content:center;
+  z-index:999;
+}
+
+.lightbox video,
+.lightbox iframe{
+  width:80vw;
+  height:45vw;
+  max-width:900px;
+  max-height:500px;
+  border-radius:10px;
+}
+
+.close{
+  position:absolute;
+  top:30px;
+  right:30px;
+  font-size:30px;
+  cursor:pointer;
+}
