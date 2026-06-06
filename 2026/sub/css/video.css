@@ -109,7 +109,7 @@ body { background:#111; }
   height:45vw;
   max-width:900px;
   max-height:500px;
-  border-radius:10px;
+  /* border-radius:10px; */
 }
 
 .horizontal-video{
@@ -117,14 +117,14 @@ body { background:#111; }
   height:auto;
   max-width:900px;
   max-height:500px;
-  border-radius:10px;
+  /* border-radius:10px; */
 }
 
 .vertical-video{
   height:90vh;
   width:auto;
   max-width:500px;
-  border-radius:10px;
+  /* border-radius:10px; */
 }
 
 .close{
