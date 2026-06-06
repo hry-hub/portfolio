@@ -279,11 +279,14 @@ body{ overflow-x:hidden; height:200vh; }
   .slide-texts span { height:70px; line-height:70px; }
   .text-wrap { font-size:20px; }
   .slide-texts span { font-size:50px; }
+  .text-wrap p { margin:0; }
   .text-wrap b { font-size:20px; }
 
   .info2 { margin-top:50px; }
   .info2>div div { width:100%; padding : 10px 20px; }
+  .info2 h3 b { font-size:13px; }
   .career ul { padding : 0 44px; }
+  .career ul li { margin-bottom: 8px; }
   .skill ul { padding:0 44px; }
   .skill ul li { padding:5px 10px; }
 
