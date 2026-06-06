@@ -3,11 +3,12 @@ body { background: #111; }
 
 /*=============================*/
 
-    .gallery {
-      column-count: 6;
-      column-gap: 16px;
-      padding: 20px;
-    }
+.gallery{
+  display:grid;
+  grid-template-columns:repeat(6, 1fr);
+  gap:16px;
+  padding:20px;
+}
 
     .item {
       margin-bottom: 16px;
@@ -27,17 +28,23 @@ body { background: #111; }
     }
 
     /* 반응형 */
-    @media (max-width: 1200px) {
-      .gallery { column-count: 3; }
-    }
+@media (max-width:1200px){
+  .gallery{
+    grid-template-columns:repeat(3, 1fr);
+  }
+}
 
-    @media (max-width: 768px) {
-      .gallery { column-count: 2; }
-    }
+@media (max-width:768px){
+  .gallery{
+    grid-template-columns:repeat(2, 1fr);
+  }
+}
 
-    @media (max-width: 480px) {
-      .gallery { column-count: 1; }
-    }
+@media (max-width:480px){
+  .gallery{
+    grid-template-columns:repeat(1, 1fr);
+  }
+}
 
     /* Lightbox */
     .lightbox {
