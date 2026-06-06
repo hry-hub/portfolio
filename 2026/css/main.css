@@ -285,10 +285,12 @@ body{ overflow-x:hidden; height:200vh; }
   .info2 { margin-top:50px; }
   .info2>div div { width:100%; padding : 10px 20px; }
   .info2 h3 b { font-size:13px; }
-  .career ul { padding : 0 44px; }
-  .career ul li { margin-bottom: 8px; }
-  .skill ul { padding:0 44px; }
+  .career ul { padding : 0 64px; }
+  .career ul li { font-size:11px; margin-bottom: 8px; }
+  .skill ul { padding:0 64px; }
   .skill ul li { padding:5px 10px; }
+  .skill img { width:25px; height:25px; }
+  .connect p { font-size:13px; }
 
   .bg1 { background-position: 77% center;}
   .bg2 { background-position: 80% center;}
