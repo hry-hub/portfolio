@@ -223,7 +223,7 @@
 				gallery.style.gridTemplateColumns = "repeat(2, 1fr)";
 				}
 				if(window.innerWidth < 600){
-				gallery.style.gridTemplateColumns = "repeat(2, 1fr)";
+				gallery.style.gridTemplateColumns = "repeat(1, 1fr)";
 				}
 
 				visibleItems.forEach(item=>{
@@ -262,14 +262,14 @@
 			}
 
 			/* =========================
-				⭐ 나머지 → 기존 masonry
+				⭐ 나머지 → 기존 masonry (전체탭)
 			========================= */
 			gallery.style.display = "flex";
 
 			let columnCount = 4;
 			if(window.innerWidth < 1200) columnCount = 3;
 			if(window.innerWidth < 768) columnCount = 2;
-			if(window.innerWidth < 480) columnCount = 1;
+			if(window.innerWidth < 480) columnCount = 2;
 
 			const columns = [];
 			for(let i=0;i<columnCount;i++){
