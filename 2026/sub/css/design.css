@@ -2,7 +2,7 @@
 body { background: #111; }
 
 /*=============================*/
-
+.notice { margin : 40px 0 5px 16px; }
 .notice p{
     color:#fff;
     margin : 10px 0; 
@@ -71,7 +71,7 @@ body { background: #111; }
     }
 
     @media (max-width: 480px) {
-        .notice { margin-top:40px; margin-bottom:5px; text-align:center; }
+        .notice { text-align:center; margin-left:0; }
         .featured-gallery { column-count: 2; }
         .gallery { column-count: 2; }
     }
