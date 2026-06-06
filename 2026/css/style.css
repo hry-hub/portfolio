@@ -4,5 +4,18 @@ li { list-style:none; }
 address,em,i { font-style:normal; }
 a { text-decoration: none; color:#333; }
 html { }
-body{ font-family: 'Pretendard', 'GmarketSans', 'Arial', sans-serif; }
+body { 
+    font-family: 'Pretendard', 'GmarketSans', 'Arial', sans-serif; 
+    /*드래그막기*/
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+img{
+    /*이미지 드래그 막기*/
+    -webkit-user-drag: none;
+    user-select: none;
+    /*pointer-events: none; /* 클릭도 막힘 */
+}
 
