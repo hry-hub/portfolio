@@ -8,7 +8,8 @@ body{ overflow-x:hidden; height:200vh; }
 .main{
   position:fixed;
   width:100%;
-  height:100vh;
+  min-height:100vh;
+  min-height:100dvh;
   background:#fff;
   /* background:#fff url('../img/main.png') right / cover no-repeat;  */
   display:flex;
@@ -77,9 +78,9 @@ body{ overflow-x:hidden; height:200vh; }
 /* PORTFOLIO */
 .portfolio{
   position:absolute;
-  top:100vh;
+  top:100dvh;
   width:100%;
-  height:100vh;
+  min-height:100dvh;
   overflow:hidden;
   z-index:2;
   background:#000;
@@ -274,7 +275,6 @@ body{ overflow-x:hidden; height:200vh; }
 
 @media (max-width:480px){ /* 일반 모바일 */
 
-    .main { min-height:100dvh; }
   .fixed-box { width:20ch; height:70px;}
   .slide-texts span { height:70px; line-height:70px; }
   .text-wrap { font-size:20px; }
