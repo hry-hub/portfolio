@@ -282,10 +282,10 @@ body{ overflow-x:hidden; height:200vh; }
   .text-wrap b { font-size:20px; }
 
   .info2 { margin-top:50px; }
-  .info2>div div { width:100%; }
+  .info2>div div { width:100%; padding : 10px 20px; }
   .career ul { padding : 0 44px; }
   .skill ul { padding:0 44px; }
-  .skill ul li { padding:10px; }
+  .skill ul li { padding:5px 10px; }
 
   .bg1 { background-position: 77% center;}
   .bg2 { background-position: 80% center;}
