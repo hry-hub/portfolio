@@ -319,6 +319,7 @@
 
 			const type = item.dataset.type;
 			const src = item.dataset.src;
+			const isVertical = item.dataset.category === "reels";
 
 			content.innerHTML = "";
 
@@ -337,7 +338,14 @@
 			}
 
 			if(type === "video"){
-				content.innerHTML = `<video controls autoplay><source src="${src}" type="video/mp4"></video>`;
+				content.innerHTML = `
+				    <video
+						class="${isVertical ? 'vertical-video' : 'horizontal-video'}"
+						controls
+						autoplay>
+						<source src="${src}" type="video/mp4">
+					</video>
+				`;
 			}
 
 			lightbox.style.display = "flex";

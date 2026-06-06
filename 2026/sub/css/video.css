@@ -69,6 +69,7 @@ body { background:#111; }
   transform:translate(-50%,-50%);
   font-size:30px;
   background:rgba(0,0,0,0.6);
+  color:#fff;
   width:50px;
   height:50px;
   line-height:55px; 
@@ -109,4 +110,16 @@ body { background:#111; }
   right:30px;
   font-size:30px;
   cursor:pointer;
+}
+
+.horizontal-video{
+    width:min(1000px, 90vw);
+    height:auto;
+    max-height:90vh;
+}
+
+.vertical-video{
+    height:90vh;
+    width:auto;
+    max-width:90vw;
 }
