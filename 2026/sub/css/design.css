@@ -3,6 +3,12 @@ body { background: #111; }
 
 /*=============================*/
 
+    .featured-gallery{
+    column-count:3;
+    column-gap:16px;
+    padding:20px;
+}
+
     .gallery {
       column-count: 6;
       column-gap: 16px;
@@ -11,6 +17,14 @@ body { background: #111; }
 
     /*순서대로 노출 원하면 변경 */
     /*
+
+    .featured-gallery{
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:16px;
+    padding:20px;
+}
+
     .gallery{
   display:grid;
   grid-template-columns:repeat(6, 1fr);
@@ -38,14 +52,17 @@ body { background: #111; }
 
     /* 반응형 */
     @media (max-width: 1200px) {
+        .featured-gallery { column-count: 3; }
       .gallery { column-count: 3; }
     }
 
     @media (max-width: 768px) {
+        .featured-gallery { column-count: 2; }
       .gallery { column-count: 2; }
     }
 
     @media (max-width: 480px) {
+        .featured-gallery { column-count: 1; }
       .gallery { column-count: 1; }
     }
 
@@ -69,7 +86,7 @@ body { background: #111; }
   }
 }
   */
-  
+
     /* Lightbox */
     .lightbox {
       position: fixed;
