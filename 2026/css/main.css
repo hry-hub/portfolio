@@ -47,14 +47,15 @@ body{ overflow-x:hidden; height:200vh; }
 .info2 h3 { margin-bottom:15px; font-size:15px; }
 .info2 h3 b { display:inline-block; border:1px solid #000; color:#000; /*background:#000; color:#fff; */ border-radius:50px; font-size:15px; padding:5px 15px; font-weight:normal; text-align:center;  }
 .career em { color:#aaa; letter-spacing: -1px; display:inline-block; margin-right:10px; }
-.career ul li { margin-bottom:10px; color:#666; }
+.career ul li { display:flex; justify-content : space-between; margin-bottom:15px; color:#666; }
+.career ul li i { display:inline-block; margin-left:30px; }
 .skill ul { display:flex; flex-wrap:wrap; justify-content:flex-start;}
 .skill ul li {float:left; padding:5.5px;  }
 .skill img { width:33px; height:33px; -webkit-filter : grayscale(100%); transition: all .3s;  }
 .skill img:hover { -webkit-filter : grayscale(0%); }
-.connect p { margin-bottom:5px; color:#666; }
+.connect p { margin-bottom:10px; color:#666; }
 .connect p i { color:#000; }
-.connect p:nth-of-type(1) { font-weight:bold; font-size:20px; margin-bottom:10px; color:#000; }
+.connect p:nth-of-type(1) { font-weight:bold; font-size:20px; margin-bottom:15px; color:#000; }
 
 
 /* .info { width:80%; margin:0 auto; position:relative;}
