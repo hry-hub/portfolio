@@ -4,7 +4,7 @@ body { background: #111; }
 /*=============================*/
 
     .featured-gallery{
-    column-count:3;
+    column-count:4;
     column-gap:16px;
     padding:20px;
 }
@@ -52,7 +52,7 @@ body { background: #111; }
 
     /* 반응형 */
     @media (max-width: 1200px) {
-        .featured-gallery { column-count: 3; }
+        .featured-gallery { column-count: 4; }
       .gallery { column-count: 3; }
     }
 
