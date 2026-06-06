@@ -273,14 +273,18 @@ body{ overflow-x:hidden; height:200vh; }
 
 
 @media (max-width:480px){ /* 일반 모바일 */
+
+    .main { min-height:100dvh; }
   .fixed-box { width:17ch; height:80px;}
   .slide-texts span { height:80px; line-height:80px; }
   .text-wrap { font-size:20px; }
   .slide-texts span { font-size:60px; }
   .text-wrap b { font-size:20px; }
 
+  .info2 { margin-top:50px; }
   .info2>div div { width:100%; }
-  .skill ul { padding:0 60px; }
+  .career ul { padding : 0 44px; }
+  .skill ul { padding:0 44px; }
   .skill ul li { padding:10px; }
 
   .bg1 { background-position: 77% center;}
