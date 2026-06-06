@@ -275,10 +275,10 @@ body{ overflow-x:hidden; height:200vh; }
 @media (max-width:480px){ /* 일반 모바일 */
 
     .main { min-height:100dvh; }
-  .fixed-box { width:17ch; height:80px;}
-  .slide-texts span { height:80px; line-height:80px; }
+  .fixed-box { width:20ch; height:70px;}
+  .slide-texts span { height:70px; line-height:70px; }
   .text-wrap { font-size:20px; }
-  .slide-texts span { font-size:60px; }
+  .slide-texts span { font-size:50px; }
   .text-wrap b { font-size:20px; }
 
   .info2 { margin-top:50px; }
