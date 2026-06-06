@@ -50,12 +50,11 @@ body{ overflow-x:hidden; height:200vh; }
 .career em { color:#aaa; letter-spacing: -1px; display:inline-block; margin-right:10px; }
 .career ul li { display:flex; justify-content : space-between; margin-bottom:15px; color:#666; }
 .career ul li i { display:inline-block; margin-left:30px; }
-.skill ul { display:none; /*display:flex;*/ flex-wrap:wrap; justify-content:flex-start;}
-.skill ul li {float:left; padding:5.5px;  }
+
 .skill img { width:33px; height:33px; -webkit-filter : grayscale(100%); transition: all .3s;  }
 .skill img:hover { -webkit-filter : grayscale(0%); }
 .skill table { width:100%; border-collapse: collapse; margin: 0 auto; }
-.skill table tr {}
+.skill table tr { display:flex; justify-content: space-between; }
 .skill table tr th {}
 .skill table tr td { padding: 5px; }
 .skill table tr td img { width:100%; display:block; margin : 0 auto;}
@@ -243,8 +242,6 @@ body{ overflow-x:hidden; height:200vh; }
   .info2>div div:nth-of-type(1) { border:0; }
   .info2>div div:nth-of-type(2) { border:0; }
   .info2>div div:nth-of-type(3) { border:0; }
-  .skill ul { justify-content:space-between;  }
-  .skill ul li { padding : 8px; }
 
   .center-wrap { text-align:center; }
 
@@ -267,8 +264,6 @@ body{ overflow-x:hidden; height:200vh; }
 
   .info2 { margin-top:80px; }
   .info2>div div { width:45%; }
-  .skill ul { justify-content: flex-start;}
-  .skill ul li { padding:8.9px; }
 
   .bg1 { background-position: 84% center;}
   .bg2 { background-position: 90% center;}
@@ -292,9 +287,7 @@ body{ overflow-x:hidden; height:200vh; }
   .info2 h3 b { font-size:12px; }
   .career ul { padding : 0 74px; }
   .career ul li { font-size:13px; margin-bottom: 8px; }
-  .skill ul { padding:0 74px; }
-  .skill ul li { padding:4px; }
-  /* .skill img { width:28px; height:28px; } */
+  .skill table tr { justify-content: center; }
   .connect p { font-size:13px; }
 
   .bg1 { background-position: 77% center;}
