@@ -22,7 +22,7 @@ body{ overflow-x:hidden; height:200vh; }
 }
 .main>div { width:100%; }
 /* 롤링 텍스트 */
-.text-wrap { font-size:30px; white-space: nowrap;  font-family: 'Paperlogy', 'Pretendard', 'GmarketSans', 'Arial', sans-serif; font-weight:300; color:#555; text-align:center; }
+.text-wrap { font-size:30px; white-space: nowrap;  font-family: 'Paperozi', 'Pretendard', 'GmarketSans', 'Arial', sans-serif; font-weight:300; color:#555; text-align:center; }
 .fixed-box {  margin-top:10px; display: inline-block;  width: 15ch;  height:100px;  overflow: hidden;  position: relative;  vertical-align: middle;}
 .slide-texts {  position: absolute;  top: 0;  left: 0;  width: 100%;  transition: transform 0.6s ease-in-out;}
 .slide-texts span {  display: block;  height: 100px;  line-height: 90px;  text-align: center; font-family:'Cafe24Shiningstar', 'Pretendard', 'GmarketSans', 'Arial', sans-serif; font-size:80px; }
@@ -139,7 +139,7 @@ body{ overflow-x:hidden; height:200vh; }
 
 /* 타이틀 */
 .item-title{
-    opacity:0.4; transition:all .3s; font-family: 'Paperlogy', 'Pretendard', 'GmarketSans', 'Arial', sans-serif; 
+    opacity:0.4; transition:all .3s; font-family: 'Paperozi', 'Pretendard', 'GmarketSans', 'Arial', sans-serif; 
     position:relative;
     display:inline-block;
   font-size:20px;
