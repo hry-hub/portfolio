@@ -239,11 +239,11 @@ body{ overflow-x:hidden; height:200vh; }
   .center-wrap { text-align:center; }
 
 
-.bg1{background : linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('../img/BG_design.png') 94% center / cover no-repeat; }
-.bg2{background : linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('../img/BG_product.png') 100% center / cover no-repeat;}
-.bg3{background : linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('../img/BG_publishing.png') 80% center / cover no-repeat; }
-.bg4{background : linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('../img/BG_video.png') 100% center / cover no-repeat;}
-.bg5{background : linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('../img/BG_sns.png') 95% 0%/ cover no-repeat;}
+.bg1{background : linear-gradient(rgba(0,0,0,0.9), rgba(0,0,0,0.9)), url('../img/BG_design.png') 94% center / cover no-repeat; }
+.bg2{background : linear-gradient(rgba(0,0,0,0.9), rgba(0,0,0,0.9)), url('../img/BG_product.png') 100% center / cover no-repeat;}
+.bg3{background : linear-gradient(rgba(0,0,0,0.9), rgba(0,0,0,0.9)), url('../img/BG_publishing.png') 80% center / cover no-repeat; }
+.bg4{background : linear-gradient(rgba(0,0,0,0.9), rgba(0,0,0,0.9)), url('../img/BG_video.png') 100% center / cover no-repeat;}
+.bg5{background : linear-gradient(rgba(0,0,0,0.9), rgba(0,0,0,0.9)), url('../img/BG_sns.png') 95% 0%/ cover no-repeat;}
 
 }
 
