@@ -57,7 +57,7 @@ body{ height:100%; overflow:hidden; background:#111; color:#fff; }
 .logo-item{
     /* aspect-ratio:1/1; */
     aspect-ratio:270/130;
-    background:#fff;
+    /* background:#fff; */
     border:1px solid #222;
     border-radius:18px;
     overflow:hidden;
@@ -87,6 +87,7 @@ body{ height:100%; overflow:hidden; background:#111; color:#fff; }
 
 .logo-item.active{
     border:1px solid #fff;
+    background:#fff;
     box-shadow:0 0 25px rgba(255,255,255,.12);
     opacity:1;
 }
