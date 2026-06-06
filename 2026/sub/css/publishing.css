@@ -251,7 +251,7 @@ body{ height:100%; overflow:hidden; background:#111; color:#fff; }
         flex-direction:column;
     } */
 
-    .portfolio-header p { text-align:center; }
+    .portfolio-header p { text-align:center; font-size:13px; background:#222; padding:5px 10px; }
     .preview-area{ display:none; }
     .logo-area { width:100%; }
     .logo-grid{ grid-template-columns:repeat(5,1fr); }
