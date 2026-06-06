@@ -297,4 +297,7 @@ body{ overflow-x:hidden; height:200vh; }
   .bg3 { background-position: 55% center;}
   .bg4 { background-position: 90% center;}
   .bg5 { background-position: 78% center;}
+
+  .inner p { font-size:15px; line-height:20px; }
+  .inner a { font-size:12px; }
 }
