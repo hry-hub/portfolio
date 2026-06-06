@@ -22,7 +22,7 @@ body{ height:100%; overflow:hidden; background:#111; color:#fff; }
 }
 
 .portfolio-header p{
-    color:#888;
+    color:#fff;
     margin : 10px 0; 
     font-size : 13px; 
     background:#222;
