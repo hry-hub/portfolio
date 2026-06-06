@@ -54,11 +54,11 @@ body{ overflow-x:hidden; height:200vh; }
 .skill ul li {float:left; padding:5.5px;  }
 .skill img { width:33px; height:33px; -webkit-filter : grayscale(100%); transition: all .3s;  }
 .skill img:hover { -webkit-filter : grayscale(0%); }
-.skill table { width:100%; border-collapse: collapse; }
+.skill table { width:100%; border-collapse: collapse; margin: 0 auto; }
 .skill table tr {}
 .skill table tr th {}
-.skill table tr td {}
-.skill table tr td img { width:100%; }
+.skill table tr td { padding: 5px; }
+.skill table tr td img { width:100%; display:block; margin : 0 auto;}
 .connect p { margin-bottom:10px; color:#666; }
 .connect p i { color:#000; }
 .connect p:nth-of-type(1) { font-weight:bold; font-size:20px; margin-bottom:15px; color:#000; }
