@@ -44,76 +44,67 @@
 }
 
 /*페이퍼로지*/
-/* Paperlogy Thin (100) */
 @font-face {
-  font-family: 'Paperlogy';
-  src: url('../font/Paperlogy-1Thin.ttf') format('truetype');
-  font-weight: 100;
-  font-style: normal;
+    font-family: 'Paperozi';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-1Thin.woff2') format('woff2');
+    font-weight: 100;
+    font-display: swap;
 }
 
-/* Paperlogy ExtraLight (200) */
 @font-face {
-  font-family: 'Paperlogy';
-  src: url('../font/Paperlogy-2ExtraLight.ttf') format('truetype');
-  font-weight: 200;
-  font-style: normal;
+    font-family: 'Paperozi';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-2ExtraLight.woff2') format('woff2');
+    font-weight: 200;
+    font-display: swap;
 }
 
-/* Paperlogy Light (300) */
 @font-face {
-  font-family: 'Paperlogy';
-  src: url('../font/Paperlogy-3Light.ttf') format('truetype');
-  font-weight: 300;
-  font-style: normal;
+    font-family: 'Paperozi';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-3Light.woff2') format('woff2');
+    font-weight: 300;
+    font-display: swap;
 }
 
-/* Paperlogy Regular (400) */
 @font-face {
-  font-family: 'Paperlogy';
-  src: url('../font/Paperlogy-4Regular.ttf') format('truetype');
-  font-weight: 400;
-  font-style: normal;
+    font-family: 'Paperozi';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-4Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-display: swap;
 }
 
-/* Paperlogy Medium (500) */
 @font-face {
-  font-family: 'Paperlogy';
-  src: url('../font/Paperlogy-5Medium.ttf') format('truetype');
-  font-weight: 500;
-  font-style: normal;
+    font-family: 'Paperozi';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-5Medium.woff2') format('woff2');
+    font-weight: 500;
+    font-display: swap;
 }
 
-/* Paperlogy SemiBold (600) */
 @font-face {
-  font-family: 'Paperlogy';
-  src: url('../font/Paperlogy-6SemiBold.ttf') format('truetype');
-  font-weight: 600;
-  font-style: normal;
+    font-family: 'Paperozi';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-6SemiBold.woff2') format('woff2');
+    font-weight: 600;
+    font-display: swap;
 }
 
-/* Paperlogy Bold (700) */
 @font-face {
-  font-family: 'Paperlogy';
-  src: url('../font/Paperlogy-7Bold.ttf') format('truetype');
-  font-weight: 700;
-  font-style: normal;
+    font-family: 'Paperozi';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-7Bold.woff2') format('woff2');
+    font-weight: 700;
+    font-display: swap;
 }
 
-/* Paperlogy ExtraBold (800) */
 @font-face {
-  font-family: 'Paperlogy';
-  src: url('../font/Paperlogy-8ExtraBold.ttf') format('truetype');
-  font-weight: 800;
-  font-style: normal;
+    font-family: 'Paperozi';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-8ExtraBold.woff2') format('woff2');
+    font-weight: 800;
+    font-display: swap;
 }
 
-/* Paperlogy Black (900) */
 @font-face {
-  font-family: 'Paperlogy';
-  src: url('../font/Paperlogy-9Black.ttf') format('truetype');
-  font-weight: 900;
-  font-style: normal;
+    font-family: 'Paperozi';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-9Black.woff2') format('woff2');
+    font-weight: 900;
+    font-display: swap;
 }
 
 
@@ -197,3 +188,5 @@
 /*영문필기체*/
 /*Brygada 1918*/ 
 @import url('https://fonts.googleapis.com/css2?family=Brygada+1918:ital,wght@0,400..700;1,400..700&display=swap');
+
+
