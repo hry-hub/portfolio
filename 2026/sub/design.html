@@ -149,5 +149,26 @@
 			});
 		</script>
 
+		<script>
+			const randomMode = ture; //true 면 랜덤, false면 순서대로
+
+			if(randomMode){
+
+				const gallery = document.querySelector('.gallery');
+				const items = Array.from(document.querySelectorAll('.item'));
+
+				for(let i = items.length - 1; i > 0; i--){
+					const j = Math.floor(Math.random() * (i + 1));
+					[items[i], items[j]] = [items[j], items[i]];
+				}
+
+				gallery.innerHTML = '';
+
+				items.forEach(item => {
+					gallery.appendChild(item);
+				});
+			}
+		</script>
+
 	</body>
 </html>
