@@ -30,7 +30,7 @@ body{ height:100%; overflow:hidden; background:#111; color:#fff; }
     display:inline-block;
 }
 
-.portfolio-header p.mobile { display:none; }
+.portfolio-header .mobile { display:none; }
 
 .portfolio-layout{
     display:flex;
@@ -257,11 +257,12 @@ body{ height:100%; overflow:hidden; background:#111; color:#fff; }
         flex-direction:column;
     } */
 
-    .portfolio-header p.pc { display:none; }
-    .portfolio-header p.mobile { display:block; }
+    .portfolio-header .pc { display:none; }
+    .portfolio-header .mobile { display:block; }
     .preview-area{ display:none; }
     .logo-area { width:100%; }
     .logo-grid{ grid-template-columns:repeat(5,1fr); }
+    .logo-item img { padding:8px; }
 
 }
 
