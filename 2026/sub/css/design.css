@@ -71,8 +71,9 @@ body { background: #111; }
     }
 
     @media (max-width: 480px) {
+        .notice { margin-top:40px; margin-bottom:5px; text-align:center; }
         .featured-gallery { column-count: 2; }
-      .gallery { column-count: 2; }
+        .gallery { column-count: 2; }
     }
 
     /*순서대로 노출 원하면 변경 - 반응형*/
