@@ -149,25 +149,28 @@
 			});
 		</script>
 
+		<!--랜덤 셔플-->
 		<script>
-			const randomMode = true; //true 면 랜덤, false면 순서대로
+		const randomMode = true; //셔플 멈추려면 flase
 
-			if(randomMode){
+		if(randomMode){
 
-				const gallery = document.querySelector('.gallery');
-				const items = Array.from(document.querySelectorAll('.item'));
+			const gallery = document.querySelector('.gallery');
+			const items = Array.from(document.querySelectorAll('.item'));
 
-				for(let i = items.length - 1; i > 0; i--){
-					const j = Math.floor(Math.random() * (i + 1));
-					[items[i], items[j]] = [items[j], items[i]];
-				}
+			const weightedItems = items.map((item, index) => ({
+				item,
+				score: Math.random() * (items.length - index)
+			}));
 
-				gallery.innerHTML = '';
+			weightedItems.sort((a, b) => b.score - a.score);
 
-				items.forEach(item => {
-					gallery.appendChild(item);
-				});
-			}
+			gallery.innerHTML = '';
+
+			weightedItems.forEach(obj => {
+				gallery.appendChild(obj.item);
+			});
+		}
 		</script>
 
 	</body>
