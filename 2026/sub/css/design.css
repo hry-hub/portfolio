@@ -15,7 +15,8 @@ body { background: #111; }
 .featured-gallery{
     column-count:4;
     column-gap:16px;
-    padding:20px;
+    padding : 40px; 
+    /* padding : 40px 40px 0 40px;  */
 }
 
     .gallery {
@@ -66,9 +67,9 @@ body { background: #111; }
     }
 
     @media (max-width: 768px) {
-        .notice { text-align:center; margin : 20px 0; }
-        .featured-gallery { padding:20px; column-count: 2; }
-        .gallery { padding:20px; column-count: 3; }
+        .notice { text-align:center; margin : 40px 20px 0 20px; }
+        .featured-gallery { padding:0 20px; column-count: 2; }
+        .gallery { padding:0 20px; column-count: 3; }
     }
 
     @media (max-width: 480px) {

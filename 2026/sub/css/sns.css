@@ -23,7 +23,7 @@ img{ display:block; width:100%; }
 }
 
 .tab-btn{
-    font-size:15px;
+    font-size:14px;
     background:#222;
     border:1px solid #333;
 
@@ -38,11 +38,11 @@ img{ display:block; width:100%; }
 }
 
 .tab-btn.active{
-
-    background:#fff;
-    color:#111;
-
+    background:red;
+    border:1px solid red;
+    color:#fff;
 }
+.tab-btn:hover { border:1px solid red; background:red; }
 
 /* =========================
    PROFILE
@@ -83,7 +83,7 @@ img{ display:block; width:100%; }
 
     font-size:14px!important;
 
-    font-weight:500;
+    font-weight:500!important;
 
     transition:.3s;
 }

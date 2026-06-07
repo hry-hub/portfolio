@@ -92,7 +92,8 @@ body { margin: 0; background: #111; color: white; }
 
 /* 반응형 */
 @media (max-width: 768px) {
-  .tabs { padding : 20px; }
+  .tabs { padding : 20px; justify-content : center; }
+  .text-area { text-align:center; }
 
   .container {
     flex-direction: column;
