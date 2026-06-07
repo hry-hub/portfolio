@@ -64,7 +64,7 @@ body{ height:100%; overflow:hidden; background:#111; color:#fff; }
     /* aspect-ratio:1/1; */
     aspect-ratio:270/130;
     /* background:#fff; */
-    border:1px solid #222;
+    border:1px solid #333;
     border-radius:18px;
     overflow:hidden;
     cursor:pointer;
@@ -74,7 +74,7 @@ body{ height:100%; overflow:hidden; background:#111; color:#fff; }
 
 .logo-item:hover{
     /* transform:translateY(-5px); */
-    border-color:#555;
+    border-color:#fff;
     opacity:1;
 }
 .logo-item:hover img {
