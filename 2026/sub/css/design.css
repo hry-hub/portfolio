@@ -12,19 +12,11 @@ body { background: #111; }
     display:inline-block;
 }
 
-    /* .featured-gallery{
+.featured-gallery{
     column-count:4;
     column-gap:16px;
     padding:20px;
-} */
-
-.featured-gallery{
-    display:grid;
-    grid-template-columns:repeat(4, 1fr);
-    gap:16px;
-    padding:40px;
 }
-
 
     .gallery {
       column-count: 6;
@@ -69,18 +61,18 @@ body { background: #111; }
 
     /* 반응형 */
     @media (max-width: 1200px) {
-        .featured-gallery { grid-template-columns:repeat(4, 1fr); }
+        .featured-gallery { column-count: 4; }
         .gallery { column-count: 5; }
     }
 
     @media (max-width: 768px) {
         .notice { text-align:center; margin-left:0; }
-        .featured-gallery { grid-template-columns:repeat(2, 1fr); }
+        .featured-gallery { column-count: 2; }
         .gallery { column-count: 3; }
     }
 
     @media (max-width: 480px) {
-        .featured-gallery { grid-template-columns:repeat(2, 1fr); }
+        .featured-gallery { column-count: 2; }
         .gallery { column-count: 2; }
     }
 
