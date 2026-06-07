@@ -13,10 +13,11 @@ body { margin: 0; background: #111; color: white; }
 
 .tab {
   padding: 10px 16px;
-  background: #333;
+  background: #222;
   border-radius: 999px;
   cursor: pointer;
   transition:all .3s; 
+  font-size:15px;
 }
 
 .tab.active {

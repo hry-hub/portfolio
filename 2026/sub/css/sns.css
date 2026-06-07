@@ -23,7 +23,7 @@ img{ display:block; width:100%; }
 }
 
 .tab-btn{
-
+    font-size:15px;
     background:#222;
     border:1px solid #333;
 
@@ -62,7 +62,7 @@ img{ display:block; width:100%; }
 .profile p{
     color:#999;
     margin-top:15px;
-    line-height:1.7;
+    line-height:1.6;
 }
 
 .insta-btn{
