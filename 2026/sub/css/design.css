@@ -69,18 +69,18 @@ body { background: #111; }
 
     /* 반응형 */
     @media (max-width: 1200px) {
-        .featured-gallery { column-count: 4; }
-      .gallery { column-count: 5; }
+        .featured-gallery { grid-template-columns:repeat(4, 1fr); }
+        .gallery { column-count: 5; }
     }
 
     @media (max-width: 768px) {
-        .featured-gallery { column-count: 2; }
-      .gallery { column-count: 3; }
+        .notice { text-align:center; margin-left:0; }
+        .featured-gallery { grid-template-columns:repeat(2, 1fr); }
+        .gallery { column-count: 3; }
     }
 
     @media (max-width: 480px) {
-        .notice { text-align:center; margin-left:0; }
-        .featured-gallery { column-count: 2; }
+        .featured-gallery { grid-template-columns:repeat(2, 1fr); }
         .gallery { column-count: 2; }
     }
 
