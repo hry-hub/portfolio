@@ -66,9 +66,9 @@ body { background: #111; }
     }
 
     @media (max-width: 768px) {
-        .notice { text-align:center; margin-left:0; }
-        .featured-gallery { column-count: 2; }
-        .gallery { column-count: 3; }
+        .notice { text-align:center; margin : 20px 0; }
+        .featured-gallery { padding:20px; column-count: 2; }
+        .gallery { padding:20px; column-count: 3; }
     }
 
     @media (max-width: 480px) {
