@@ -324,7 +324,6 @@ img{ display:block; width:100%; }
         padding:40px 10px;
 
     }
-
     .profile{
 
         margin-bottom:30px;
@@ -337,6 +336,8 @@ img{ display:block; width:100%; }
 
     }
 
+
+    .porfile p { font-size : 13px; word-break: keep-all; }
     .feed-wrap{
 
         grid-template-columns:
