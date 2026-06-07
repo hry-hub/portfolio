@@ -2,7 +2,7 @@
 body { background: #111; }
 
 /*=============================*/
-.notice { margin : 40px 0 5px 16px; }
+.notice { margin : 40px 40px 0 40px; }
 .notice p{
     color:#fff;
     margin : 10px 0; 
@@ -12,16 +12,24 @@ body { background: #111; }
     display:inline-block;
 }
 
-    .featured-gallery{
+    /* .featured-gallery{
     column-count:4;
     column-gap:16px;
     padding:20px;
+} */
+
+.featured-gallery{
+    display:grid;
+    grid-template-columns:repeat(4, 1fr);
+    gap:16px;
+    padding:40px;
 }
+
 
     .gallery {
       column-count: 6;
       column-gap: 16px;
-      padding: 20px;
+      padding: 0 40px;
     }
 
     /*순서대로 노출 원하면 변경 */
