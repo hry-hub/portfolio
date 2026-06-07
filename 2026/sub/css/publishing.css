@@ -68,7 +68,7 @@ body{ height:100%; overflow:hidden; background:#111; color:#fff; }
     border-radius:18px;
     overflow:hidden;
     cursor:pointer;
-    opacity:0.5;
+    opacity:0.8;
     transition:.4s;
 }
 
