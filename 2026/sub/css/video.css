@@ -10,8 +10,8 @@ body { background:#111; }
 }
 
 .category button{
-  background:none;
-  border:1px solid #fff;
+  background:#222;
+  border:1px solid #333;
   color:#fff;
   padding:10px 20px;
   margin:5px;

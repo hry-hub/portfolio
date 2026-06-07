@@ -14,6 +14,7 @@ body { margin: 0; background: #111; color: white; }
 .tab {
   padding: 10px 16px;
   background: #222;
+  border:1px solid #333;
   border-radius: 999px;
   cursor: pointer;
   transition:all .3s; 
@@ -22,9 +23,10 @@ body { margin: 0; background: #111; color: white; }
 
 .tab.active {
   background: red;
+  border:1px solid red; 
 }
 
-.tab:hover { background:red; }
+.tab:hover { background:red; border:1px solid red; }
 
 /* 레이아웃 */
 .container {
