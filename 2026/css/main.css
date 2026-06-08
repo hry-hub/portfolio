@@ -268,7 +268,6 @@ body{ overflow:hidden; height:200vh; }
   .text-wrap p { margin-bottom:5px; }
   .intro-name { display:block; line-height:0; margin-top:25px; height:auto;  }
   .category{width:90%;}
-  .inner h1{font-size:36px;}
 
   .info2 { margin-top:80px; }
   .info2>div div { width:40%; }
@@ -290,6 +289,9 @@ body{ overflow:hidden; height:200vh; }
   .text-wrap p { margin:0; }
   .text-wrap b { font-size:20px; }
 
+
+  .inner h1{font-size:36px;}
+  
   .info2 { margin-top:50px; }
   .info2>div div { width:85%; padding : 10px 20px; }
   .info2 h3 b { font-size:12px; }
