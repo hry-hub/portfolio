@@ -188,14 +188,28 @@
 
 		<script>
 
+            
+
 			    /* 기본 브라우저 휠 스크롤 막기 */
-    window.addEventListener(
-        'wheel',
-        function(e){
+window.addEventListener(
+    'wheel',
+    function(e){
+        e.preventDefault();
+    },
+    { passive:false }
+);
+
+window.addEventListener(
+    'touchmove',
+    function(e){
+
+        if(current === 1){
             e.preventDefault();
-        },
-        { passive:false }
-    );
+        }
+
+    },
+    { passive:false }
+);
 
 			/* 원페이지 스크롤 */
 			let isScrolling=false;
@@ -293,7 +307,7 @@ $(window).on("wheel", function(e){
 			let currentBg=1;
 			const totalPortfolio = 5;
 
-			function changePortfolio(index){
+function changePortfolio(index){
 
     $(".item").removeClass("active");
     $('.item[data-index="'+index+'"]').addClass("active");
@@ -311,21 +325,13 @@ $(window).on("wheel", function(e){
         },600);
 
         currentBg = index;
-
-// 안전장치
-if(current === 0){
-    current = 1;
-}
     }
 }
 
 $(".item").click(function(){
 
-    let index = $(this).data("index");
-
     current = 1;
-
-    changePortfolio(index);
+    changePortfolio($(this).data("index"));
 
 });
 
