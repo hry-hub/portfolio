@@ -212,18 +212,23 @@
     { passive:false }
 );
 
-function handlePortfolioScroll(direction){
+$(window).on("wheel", function(e){
+
+    e.preventDefault();
 
     if(isScrolling) return;
 
-    // MAIN 상태
+    let d = e.originalEvent.deltaY;
+
+    // MAIN → PORTFOLIO
     if(current === 0){
 
-        if(direction > 0){
+        if(d > 0){
 
             isScrolling = true;
             current = 1;
 
+            // 항상 디자인부터 시작
             currentBg = 1;
             changePortfolio(1);
 
@@ -242,8 +247,8 @@ function handlePortfolioScroll(direction){
 
         isScrolling = true;
 
-        // 아래
-        if(direction > 0){
+        // 아래로
+        if(d > 0){
 
             if(currentBg < totalPortfolio){
 
@@ -260,7 +265,7 @@ function handlePortfolioScroll(direction){
 
         }
 
-        // 위
+        // 위로
         else{
 
             if(currentBg > 1){
@@ -284,18 +289,15 @@ function handlePortfolioScroll(direction){
             }
 
         }
+
     }
-}
-
-$(window).on("wheel", function(e){
-
-    e.preventDefault();
-
-    handlePortfolioScroll(
-        e.originalEvent.deltaY > 0 ? 1 : -1
-    );
 
 });
+
+$(window).on('touchmove', function(e){
+    e.preventDefault();
+});
+
 
 			/* 배경 + 아코디언 */
 			let currentBg=1;
@@ -341,28 +343,47 @@ $(".item").click(function(){
 });
 
 /*모바일 터치*/
-let touchStartY = 0;
+window.addEventListener('touchstart', function(e){
 
-window.addEventListener("touchstart", function(e){
-
-    touchStartY = e.touches[0].clientY;
+    touchStartY = e.changedTouches[0].clientY;
 
 }, { passive:true });
 
-window.addEventListener("touchend", function(e){
+window.addEventListener('touchend', function(e){
 
-    let touchEndY = e.changedTouches[0].clientY;
+    touchEndY = e.changedTouches[0].clientY;
 
     let diff = touchStartY - touchEndY;
 
-    // 민감도
+    // 너무 짧은 움직임 무시
     if(Math.abs(diff) < 80) return;
 
-    handlePortfolioScroll(
-        diff > 0 ? 1 : -1
-    );
+    // 위로 밀기
+    if(diff > 0){
+
+        $(window).trigger({
+            type:'wheel',
+            originalEvent:{
+                deltaY:100
+            }
+        });
+
+    }
+
+    // 아래로 밀기
+    else{
+
+        $(window).trigger({
+            type:'wheel',
+            originalEvent:{
+                deltaY:-100
+            }
+        });
+
+    }
 
 }, { passive:true });
+
 		</script>
 
 	</body>

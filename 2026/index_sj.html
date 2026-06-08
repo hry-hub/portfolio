@@ -212,23 +212,18 @@
     { passive:false }
 );
 
-$(window).on("wheel", function(e){
-
-    e.preventDefault();
+function handlePortfolioScroll(direction){
 
     if(isScrolling) return;
 
-    let d = e.originalEvent.deltaY;
-
-    // MAIN → PORTFOLIO
+    // MAIN 상태
     if(current === 0){
 
-        if(d > 0){
+        if(direction > 0){
 
             isScrolling = true;
             current = 1;
 
-            // 항상 디자인부터 시작
             currentBg = 1;
             changePortfolio(1);
 
@@ -247,8 +242,8 @@ $(window).on("wheel", function(e){
 
         isScrolling = true;
 
-        // 아래로
-        if(d > 0){
+        // 아래
+        if(direction > 0){
 
             if(currentBg < totalPortfolio){
 
@@ -265,7 +260,7 @@ $(window).on("wheel", function(e){
 
         }
 
-        // 위로
+        // 위
         else{
 
             if(currentBg > 1){
@@ -289,15 +284,18 @@ $(window).on("wheel", function(e){
             }
 
         }
-
     }
+}
 
-});
+$(window).on("wheel", function(e){
 
-$(window).on('touchmove', function(e){
     e.preventDefault();
-});
 
+    handlePortfolioScroll(
+        e.originalEvent.deltaY > 0 ? 1 : -1
+    );
+
+});
 
 			/* 배경 + 아코디언 */
 			let currentBg=1;
@@ -343,47 +341,28 @@ $(".item").click(function(){
 });
 
 /*모바일 터치*/
-window.addEventListener('touchstart', function(e){
+let touchStartY = 0;
 
-    touchStartY = e.changedTouches[0].clientY;
+window.addEventListener("touchstart", function(e){
+
+    touchStartY = e.touches[0].clientY;
 
 }, { passive:true });
 
-window.addEventListener('touchend', function(e){
+window.addEventListener("touchend", function(e){
 
-    touchEndY = e.changedTouches[0].clientY;
+    let touchEndY = e.changedTouches[0].clientY;
 
     let diff = touchStartY - touchEndY;
 
-    // 너무 짧은 움직임 무시
+    // 민감도
     if(Math.abs(diff) < 80) return;
 
-    // 위로 밀기
-    if(diff > 0){
-
-        $(window).trigger({
-            type:'wheel',
-            originalEvent:{
-                deltaY:100
-            }
-        });
-
-    }
-
-    // 아래로 밀기
-    else{
-
-        $(window).trigger({
-            type:'wheel',
-            originalEvent:{
-                deltaY:-100
-            }
-        });
-
-    }
+    handlePortfolioScroll(
+        diff > 0 ? 1 : -1
+    );
 
 }, { passive:true });
-
 		</script>
 
 	</body>
