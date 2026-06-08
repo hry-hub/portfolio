@@ -191,78 +191,82 @@
 			let isScrolling=false;
 			let current=0;
 
-$(window).on("wheel",function(e){
+$(window).on("wheel", function(e){
 
     if(isScrolling) return;
 
     let d = e.originalEvent.deltaY;
 
-    // MAIN -> PORTFOLIO
-    if(current===0 && d>0){
+    // MAIN → PORTFOLIO
+    if(current === 0){
 
-        isScrolling=true;
-        current=1;
+        if(d > 0){
 
-        $("html,body").animate({
-            scrollTop:window.innerHeight
-        },700,()=>{
-            isScrolling=false;
-        });
+            isScrolling = true;
+            current = 1;
+
+            // 항상 디자인부터 시작
+            currentBg = 1;
+            changePortfolio(1);
+
+            $("html,body").stop().animate({
+                scrollTop: window.innerHeight
+            },700,()=>{
+                isScrolling = false;
+            });
+        }
 
         return;
     }
 
-    // PORTFOLIO 내부 이동
-    if(current===1){
+    // PORTFOLIO 상태
+    if(current === 1){
 
-        isScrolling=true;
+        isScrolling = true;
 
-        if(d>0){
-
-            // 아래
+        // 아래로
+        if(d > 0){
 
             if(currentBg < totalPortfolio){
 
-                changePortfolio(currentBg+1);
+                changePortfolio(currentBg + 1);
 
                 setTimeout(()=>{
-                    isScrolling=false;
+                    isScrolling = false;
                 },700);
 
             }else{
 
-                isScrolling=false;
-
-                // 마지막 SNS에서 더 내리면
-                // 나중에 contact 추가시 여기 작성
+                isScrolling = false;
             }
 
-        }else{
+        }
 
-            // 위
+        // 위로
+        else{
 
             if(currentBg > 1){
 
-                changePortfolio(currentBg-1);
+                changePortfolio(currentBg - 1);
 
                 setTimeout(()=>{
-                    isScrolling=false;
+                    isScrolling = false;
                 },700);
 
-}else{
+            }else{
 
-    current=0;
+                current = 0;
 
-    $("html,body").stop(true);
+                $("html,body").stop().animate({
+                    scrollTop:0
+                },700,()=>{
+                    isScrolling = false;
+                });
 
-    window.scrollTo(0,0);
+            }
 
-    setTimeout(()=>{
-        isScrolling=false;
-    },100);
-
-}
         }
+
     }
 
 });
@@ -289,14 +293,22 @@ $(window).on("wheel",function(e){
         },600);
 
         currentBg = index;
+
+		currentBg = index;
+
+// 안전장치
+if(current === 0){
+    current = 1;
+}
     }
 }
 
 $(".item").click(function(){
 
-    let index=$(this).data("index");
+    let index = $(this).data("index");
 
     current = 1;
+    currentBg = index;
 
     changePortfolio(index);
 
