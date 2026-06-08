@@ -196,10 +196,13 @@
         },
         { passive:false }
     );
-	
+
 			/* 원페이지 스크롤 */
 			let isScrolling=false;
 			let current=0;
+
+			let touchStartY = 0;
+			let touchEndY = 0;
 
 			window.addEventListener(
     'wheel',
@@ -338,6 +341,49 @@ $(".item").click(function(){
     changePortfolio(index);
 
 });
+
+/*모바일 터치*/
+window.addEventListener('touchstart', function(e){
+
+    touchStartY = e.changedTouches[0].clientY;
+
+}, { passive:true });
+
+window.addEventListener('touchend', function(e){
+
+    touchEndY = e.changedTouches[0].clientY;
+
+    let diff = touchStartY - touchEndY;
+
+    // 너무 짧은 움직임 무시
+    if(Math.abs(diff) < 80) return;
+
+    // 위로 밀기
+    if(diff > 0){
+
+        $(window).trigger({
+            type:'wheel',
+            originalEvent:{
+                deltaY:100
+            }
+        });
+
+    }
+
+    // 아래로 밀기
+    else{
+
+        $(window).trigger({
+            type:'wheel',
+            originalEvent:{
+                deltaY:-100
+            }
+        });
+
+    }
+
+}, { passive:true });
+
 		</script>
 
 	</body>
