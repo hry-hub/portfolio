@@ -303,6 +303,9 @@ img{ display:block; width:100%; }
 
 }
 
+.swiper-button-prev:after, .swiper-rtl .swiper-button-next:after { color : #fff; }
+.swiper-pagination-bullet-active { background:#fff!important; }
+
 /* =========================
    MOBILE
 ========================= */
