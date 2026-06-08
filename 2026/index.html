@@ -201,16 +201,6 @@
 			let isScrolling=false;
 			let current=0;
 
-			let touchStartY = 0;
-			let touchEndY = 0;
-
-			window.addEventListener(
-    'wheel',
-    function(e){
-        e.preventDefault();
-    },
-    { passive:false }
-);
 
 $(window).on("wheel", function(e){
 
@@ -294,10 +284,6 @@ $(window).on("wheel", function(e){
 
 });
 
-$(window).on('touchmove', function(e){
-    e.preventDefault();
-});
-
 
 			/* 배경 + 아코디언 */
 			let currentBg=1;
@@ -342,47 +328,6 @@ $(".item").click(function(){
 
 });
 
-/*모바일 터치*/
-window.addEventListener('touchstart', function(e){
-
-    touchStartY = e.changedTouches[0].clientY;
-
-}, { passive:true });
-
-window.addEventListener('touchend', function(e){
-
-    touchEndY = e.changedTouches[0].clientY;
-
-    let diff = touchStartY - touchEndY;
-
-    // 너무 짧은 움직임 무시
-    if(Math.abs(diff) < 80) return;
-
-    // 위로 밀기
-    if(diff > 0){
-
-        $(window).trigger({
-            type:'wheel',
-            originalEvent:{
-                deltaY:100
-            }
-        });
-
-    }
-
-    // 아래로 밀기
-    else{
-
-        $(window).trigger({
-            type:'wheel',
-            originalEvent:{
-                deltaY:-100
-            }
-        });
-
-    }
-
-}, { passive:true });
 
 		</script>
 
