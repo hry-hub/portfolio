@@ -216,7 +216,6 @@ window.addEventListener(
 			let current=0;
 
 			let touchStartY = 0;
-			let touchEndY = 0;
 
 function handlePortfolioScroll(direction){
 
@@ -287,11 +286,15 @@ $("html,body").stop().animate({
 
                 current = 0;
 
-                $("html,body").stop().animate({
-                    scrollTop:0
-                },700,()=>{
-                    isScrolling = false;
-                });
+$("html,body").stop().animate({
+    scrollTop:0
+},700,()=>{
+
+    window.scrollTo(0,0);
+
+    isScrolling = false;
+
+});
 
             }
 
