@@ -233,11 +233,17 @@ function handlePortfolioScroll(direction){
             currentBg = 1;
             changePortfolio(1);
 
-            $("html,body").stop().animate({
-                scrollTop: $(".portfolio").offset().top
-            },700,()=>{
-                isScrolling = false;
-            });
+$("html,body").stop().animate({
+    scrollTop: $(".portfolio").offset().top
+},700,()=>{
+
+    window.scrollTo(
+        0,
+        $(".portfolio").offset().top
+    );
+
+    isScrolling = false;
+});
         }
 
         return;
