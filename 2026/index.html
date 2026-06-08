@@ -249,17 +249,22 @@ $(window).on("wheel",function(e){
                     isScrolling=false;
                 },700);
 
-            }else{
+}else{
 
-                current=0;
+    current=0;
 
-                $("html,body").animate({
-                    scrollTop:0
-                },700,()=>{
-                    isScrolling=false;
-                });
+    isScrolling=true;
 
-            }
+    window.scrollTo({
+        top:0,
+        behavior:'instant'
+    });
+
+    setTimeout(()=>{
+        isScrolling=false;
+    },100);
+
+}
         }
     }
 
