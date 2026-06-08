@@ -308,8 +308,6 @@ $(window).on("wheel", function(e){
 
         currentBg = index;
 
-		currentBg = index;
-
 // 안전장치
 if(current === 0){
     current = 1;
@@ -322,7 +320,6 @@ $(".item").click(function(){
     let index = $(this).data("index");
 
     current = 1;
-    currentBg = index;
 
     changePortfolio(index);
 
