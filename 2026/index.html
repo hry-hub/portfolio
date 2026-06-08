@@ -191,48 +191,112 @@
 			let isScrolling=false;
 			let current=0;
 
-			$(window).on("wheel",function(e){
-			if(isScrolling)return;
+$(window).on("wheel",function(e){
 
-			let d=e.originalEvent.deltaY;
+    if(isScrolling) return;
 
-			if(d>0 && current===0){
-				isScrolling=true; current=1;
-				$("html,body").animate({scrollTop:window.innerHeight},700,()=>isScrolling=false);
-			}
-			else if(d<0 && current===1){
-				isScrolling=true; current=0;
-				$("html,body").animate({scrollTop:0},700,()=>isScrolling=false);
-			}
-			});
+    let d = e.originalEvent.deltaY;
+
+    // MAIN -> PORTFOLIO
+    if(current===0 && d>0){
+
+        isScrolling=true;
+        current=1;
+
+        $("html,body").animate({
+            scrollTop:window.innerHeight
+        },700,()=>{
+            isScrolling=false;
+        });
+
+        return;
+    }
+
+    // PORTFOLIO 내부 이동
+    if(current===1){
+
+        isScrolling=true;
+
+        if(d>0){
+
+            // 아래
+
+            if(currentBg < totalPortfolio){
+
+                changePortfolio(currentBg+1);
+
+                setTimeout(()=>{
+                    isScrolling=false;
+                },700);
+
+            }else{
+
+                isScrolling=false;
+
+                // 마지막 SNS에서 더 내리면
+                // 나중에 contact 추가시 여기 작성
+            }
+
+        }else{
+
+            // 위
+
+            if(currentBg > 1){
+
+                changePortfolio(currentBg-1);
+
+                setTimeout(()=>{
+                    isScrolling=false;
+                },700);
+
+            }else{
+
+                current=0;
+
+                $("html,body").animate({
+                    scrollTop:0
+                },700,()=>{
+                    isScrolling=false;
+                });
+
+            }
+        }
+    }
+
+});
 
 			/* 배경 + 아코디언 */
 			let currentBg=1;
+			const totalPortfolio = 5;
 
-			$(".item").click(function(){
+			function changePortfolio(index){
 
-			let index=$(this).data("index");
+    $(".item").removeClass("active");
+    $('.item[data-index="'+index+'"]').addClass("active");
 
-			// 아코디언
-			$(".item").removeClass("active");
-			$(this).addClass("active");
+    if(index !== currentBg){
 
-			// 배경 전환
-			if(index!==currentBg){
-				let $current=$(".bg"+currentBg);
-				let $next=$(".bg"+index);
+        let $current = $(".bg"+currentBg);
+        let $next = $(".bg"+index);
 
-				$current.addClass("prev");
-				$next.addClass("active");
+        $current.addClass("prev");
+        $next.addClass("active");
 
-				setTimeout(()=>{
-				$current.removeClass("active prev");
-				},600);
+        setTimeout(()=>{
+            $current.removeClass("active prev");
+        },600);
 
-				currentBg=index;
-			}
+        currentBg = index;
+    }
+}
 
-			});
+$(".item").click(function(){
+
+    let index=$(this).data("index");
+
+    changePortfolio(index);
+
+});
 		</script>
 
 	</body>
