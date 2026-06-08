@@ -253,7 +253,7 @@ $(window).on("wheel",function(e){
 
     current=0;
 
-    isScrolling=true;
+    $("html,body").stop(true);
 
     window.scrollTo(0,0);
 
@@ -295,6 +295,8 @@ $(window).on("wheel",function(e){
 $(".item").click(function(){
 
     let index=$(this).data("index");
+
+    current = 1;
 
     changePortfolio(index);
 
