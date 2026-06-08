@@ -51,8 +51,8 @@ body{ overflow:hidden; height:200vh; }
 .career ul li { display:flex; justify-content : space-between; margin-bottom:15px; color:#666; }
 .career ul li i { display:inline-block; margin-left:30px; }
 
-.skill img { width:33px; height:33px; -webkit-filter : grayscale(100%); transition: all .3s;  }
-.skill img:hover { -webkit-filter : grayscale(0%); }
+.skill img { width:33px; height:33px; /*-webkit-filter : grayscale(100%);*/ transition: all .3s;  }
+/* .skill img:hover { -webkit-filter : grayscale(0%); } */
 .skill table { width:100%; border-collapse: collapse; margin: 0 auto; }
 .skill table tr { display:flex; justify-content: space-between; }
 .skill table tr th {}
@@ -62,20 +62,6 @@ body{ overflow:hidden; height:200vh; }
 .connect p i { color:#000; }
 .connect p:nth-of-type(1) { font-weight:bold; font-size:20px; margin-bottom:15px; color:#000; }
 
-
-/* .info { width:80%; margin:0 auto; position:relative;}
-.info div { margin: 30px 0;}
-.info div p { display:flex; margin-bottom:10px; }
-.info div p span:nth-of-type(1) { width:30%; }
-.info div p span:nth-of-type(2) { width:70%; padding:5px 10px; }
-.info div p span b { display:inline-block; background:#000; color:#fff; padding:5px 10px; border-radius:50px; text-align:center; font-size:15px; }
-.info div p span em { display:flex; }
-.info img { width:40px; height:40px; -webkit-filter : grayscale(100%); transition: all .3s; margin:5px; }
-.info img:hover { -webkit-filter : grayscale(0%); } */
-
-/* .connect { width:100%; border:1px solid #000; text-align:center; padding:10px 30px;  }
-.connect h6 { font-size:20px; margin-bottom:20px; }
-.connect p { justify-content:center; font-size:15px; } */
 
 /*====================================*/
 
