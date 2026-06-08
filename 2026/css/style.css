@@ -19,3 +19,4 @@ img{
     /*pointer-events: none; /* 클릭도 막힘 */
 }
 
+#sub-inner { max-width:1800px; margin:0 auto; border:1px solid red; }
