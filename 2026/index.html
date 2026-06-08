@@ -255,10 +255,7 @@ $(window).on("wheel",function(e){
 
     isScrolling=true;
 
-    window.scrollTo({
-        top:0,
-        behavior:'instant'
-    });
+    window.scrollTo(0,0);
 
     setTimeout(()=>{
         isScrolling=false;
