@@ -234,7 +234,7 @@ function handlePortfolioScroll(direction){
             changePortfolio(1);
 
             $("html,body").stop().animate({
-                scrollTop: window.innerHeight
+                scrollTop: $(".portfolio").offset().top
             },700,()=>{
                 isScrolling = false;
             });
