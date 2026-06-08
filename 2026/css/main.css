@@ -1,6 +1,6 @@
 /* 메인페이지 css */
 html { overflow-x: hidden; }
-body{ overflow:hidden; height:100vh; }
+body{ overflow:hidden; /*height:200vh;*/ }
 
 /*=============================*/
 
