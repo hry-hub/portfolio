@@ -269,12 +269,11 @@ body{ height:100%; overflow:hidden; background:#111; color:#fff; }
     .logo-grid{ grid-template-columns:repeat(5,1fr); }
 
     .logo-item { background : #fff; opacity:1; }
-    .logo-item img { padding:30px; filter:none; opacity:1; }
+    .logo-item img { filter:none; opacity:1; }
 
 }
 
 @media(max-width:1024px){
-    .logo-item img { padding : 15px; }
 }
 
 @media(max-width:768px){
@@ -284,10 +283,8 @@ body{ height:100%; overflow:hidden; background:#111; color:#fff; }
     .portfolio-header h2{ font-size:34px;}
     .logo-grid{ grid-template-columns:repeat(3,1fr); }
     .logo-item { border-radius: 10px;}
-    .logo-item img { padding:30px; }
 
 }
 
 @media(max-width:600px){
-        .logo-item img { padding:20px; }
 }
