@@ -293,7 +293,7 @@ body{ overflow:hidden; height:200vh; }
   .info2 { margin-top:50px; }
   .info2>div div { width:85%; padding : 10px 20px; }
   .info2 h3 b { font-size:12px; }
-  .career ul { padding : 0 65px; }
+  .career ul { padding : 0 50px; }
   .career ul li { font-size:13px; margin-bottom: 8px; }
   .skill table tr { justify-content: center; }
   .connect p { font-size:13px; }
