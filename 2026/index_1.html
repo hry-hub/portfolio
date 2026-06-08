@@ -188,61 +188,45 @@
 
 		<script>
 
-            
-
 			    /* 기본 브라우저 휠 스크롤 막기 */
-window.addEventListener(
-    'wheel',
-    function(e){
-        e.preventDefault();
-    },
-    { passive:false }
-);
-
-window.addEventListener(
-    'touchmove',
-    function(e){
-
-        if(current === 1){
+    window.addEventListener(
+        'wheel',
+        function(e){
             e.preventDefault();
-        }
-
-    },
-    { passive:false }
-);
+        },
+        { passive:false }
+    );
 
 			/* 원페이지 스크롤 */
 			let isScrolling=false;
 			let current=0;
 
-			let touchStartY = 0;
 
-function handlePortfolioScroll(direction){
+$(window).on("wheel", function(e){
+
+    e.preventDefault();
 
     if(isScrolling) return;
 
-    // MAIN 상태
+    let d = e.originalEvent.deltaY;
+
+    // MAIN → PORTFOLIO
     if(current === 0){
 
-        if(direction > 0){
+        if(d > 0){
 
             isScrolling = true;
             current = 1;
 
+            // 항상 디자인부터 시작
             currentBg = 1;
             changePortfolio(1);
 
-$("html,body").stop().animate({
-    scrollTop: $(".portfolio").offset().top
-},700,()=>{
-
-    window.scrollTo(
-        0,
-        $(".portfolio").offset().top
-    );
-
-    isScrolling = false;
-});
+            $("html,body").stop().animate({
+                scrollTop: window.innerHeight
+            },700,()=>{
+                isScrolling = false;
+            });
         }
 
         return;
@@ -253,8 +237,8 @@ $("html,body").stop().animate({
 
         isScrolling = true;
 
-        // 아래
-        if(direction > 0){
+        // 아래로
+        if(d > 0){
 
             if(currentBg < totalPortfolio){
 
@@ -271,7 +255,7 @@ $("html,body").stop().animate({
 
         }
 
-        // 위
+        // 위로
         else{
 
             if(currentBg > 1){
@@ -286,37 +270,26 @@ $("html,body").stop().animate({
 
                 current = 0;
 
-$("html,body").stop().animate({
-    scrollTop:0
-},700,()=>{
-
-    window.scrollTo(0,0);
-
-    isScrolling = false;
-
-});
+                $("html,body").stop().animate({
+                    scrollTop:0
+                },700,()=>{
+                    isScrolling = false;
+                });
 
             }
 
         }
+
     }
-}
-
-$(window).on("wheel", function(e){
-
-    e.preventDefault();
-
-    handlePortfolioScroll(
-        e.originalEvent.deltaY > 0 ? 1 : -1
-    );
 
 });
+
 
 			/* 배경 + 아코디언 */
 			let currentBg=1;
 			const totalPortfolio = 5;
 
-function changePortfolio(index){
+			function changePortfolio(index){
 
     $(".item").removeClass("active");
     $('.item[data-index="'+index+'"]').addClass("active");
@@ -334,54 +307,24 @@ function changePortfolio(index){
         },600);
 
         currentBg = index;
+
+// 안전장치
+if(current === 0){
+    current = 1;
+}
     }
 }
 
 $(".item").click(function(){
 
+    let index = $(this).data("index");
+
     current = 1;
-    changePortfolio($(this).data("index"));
+
+    changePortfolio(index);
 
 });
 
-/*모바일 터치*/
-
-window.addEventListener("touchstart", function(e){
-
-    touchStartY = e.touches[0].clientY;
-
-}, { passive:true });
-
-window.addEventListener("touchend", function(e){
-
-    let touchEndY = e.changedTouches[0].clientY;
-
-    let diff = touchStartY - touchEndY;
-
-    // 민감도
-    if(Math.abs(diff) < 50) return;
-
-    handlePortfolioScroll(
-        diff > 0 ? 1 : -1
-    );
-
-}, { passive:true });
-
-$(window).on("load", function(){
-
-    const portfolioTop = $(".portfolio").offset().top;
-
-    if($(window).scrollTop() >= portfolioTop - 50){
-
-        current = 1;
-
-    }else{
-
-        current = 0;
-
-    }
-
-});
 
 		</script>
 
