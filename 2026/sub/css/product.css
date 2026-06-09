@@ -33,6 +33,7 @@ body { margin: 0; background: #111; color: white; }
   display: flex;
   gap: 60px;
   padding: 40px;
+  height:calc(100vh - 130px);
 }
 
 /* 왼쪽 */
@@ -71,13 +72,14 @@ body { margin: 0; background: #111; color: white; }
 
 /* 4분할 */
 .grid {
+  height:100%; 
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 20px;
 }
 
 .block {
-  height: 700px; /* 🔥 더 길게 */
+  height: 100%; 
   background-size: cover;
   background-repeat: no-repeat;
   border-radius: 12px;
