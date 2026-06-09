@@ -46,7 +46,11 @@ body { margin: 0; background: #111; color: white; }
 }
 /* 텍스트 */
 .text-area { text-align:center; padding : 30px 0; }
-.text-area h6 {display:none; }
+.text-area h6 {
+    /*display:none;*/
+    font-size:25px;
+    font-style: italic;
+    font-family: 'Brygada 1918', serif;}
 
 .text-area h2 {
   margin: 0;
