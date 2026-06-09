@@ -57,7 +57,7 @@ body{ overflow-x:hidden; /*height:200vh;*/ }
 .skill table tr { display:flex; justify-content: space-between; }
 .skill table tr th {}
 .skill table tr td { padding: 5px; }
-.skill table tr td img { width:100%; display:block; margin : 0 auto;}
+.skill table tr td img { /*width:100%;*/ display:block; margin : 0 auto;}
 .connect p { margin-bottom:10px; color:#666; }
 .connect p i { color:#000; }
 .connect p:nth-of-type(1) { font-weight:bold; font-size:20px; margin-bottom:15px; color:#000; }
