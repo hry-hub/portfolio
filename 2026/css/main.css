@@ -283,7 +283,7 @@ body{ overflow-x:hidden; /*height:200vh;*/ }
   .inner h1{font-size:36px;}
 
   .info2 { margin-top:50px; }
-  .info2>div div { width:85%; padding : 10px 20px; }
+  .info2>div div { width:90%; padding : 10px 20px; }
   .info2 h3 b { font-size:12px; }
   .career ul { padding : 0 40px; }
   .career ul li { font-size:13px; margin-bottom: 8px; }
