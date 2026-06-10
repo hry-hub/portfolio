@@ -50,7 +50,7 @@ body { margin: 0; background: #111; color: white; }
 .text-area h6 {
     /*display:none;*/
     font-size:20px;
-    font-style: italic;
+    /* font-style: italic; */
     font-family: 'Brygada 1918', serif;
     margin-bottom:20px; 
 }
