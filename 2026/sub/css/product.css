@@ -39,11 +39,11 @@ body { margin: 0; background: #111; color: white; }
 
 /* 왼쪽 */
 .left{
-    width:clamp(350px, 22vw, 450px);
+    width:350px;
     flex:none;
     display:flex;
     flex-direction:column;
-    overflow:hidden;
+    /* overflow:hidden; */
 }
 /* 텍스트 */
 .text-area { text-align:center; padding : 30px 0; }
@@ -85,10 +85,8 @@ body { margin: 0; background: #111; color: white; }
     align-items:center;
 }
 .phone img{
-    max-width:100%;
-    max-height:100%;
-    width:auto;
-    height:auto;
+    width:300px;
+    height:auto; 
 }
 /* 오른쪽 */
 .right{
