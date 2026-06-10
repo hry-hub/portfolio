@@ -39,7 +39,7 @@ body { margin: 0; background: #111; color: white; }
 
 /* 왼쪽 */
 .left{
-    width:350px;
+    width:clamp(320px, 22vw, 500px);
     flex:none;
     display:flex;
     flex-direction:column;
@@ -84,7 +84,7 @@ body { margin: 0; background: #111; color: white; }
     overflow:hidden;
 }
 .phone img{
-    max-height:100%;
+    max-height:105%;
     width:auto;
 }
 
