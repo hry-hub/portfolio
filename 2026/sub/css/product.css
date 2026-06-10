@@ -64,13 +64,17 @@ body { margin: 0; background: #111; color: white; }
 }
 
 /* 폰 이미지 */
-.phone {
-  text-align: center;
-  padding - top:30px; 
+.phone{
+    flex:1;
+    display:flex;
+    justify-content:center;
+    align-items:flex-end;
+    overflow:hidden;
 }
 
-.phone img {
-  width: 260px;
+.phone img{
+    max-height:100%;
+    width:auto;
 }
 
 /* 오른쪽 */
