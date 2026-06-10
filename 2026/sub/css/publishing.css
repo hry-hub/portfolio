@@ -188,7 +188,7 @@ body{ height:100%; overflow:hidden; background:#111; color:#fff; }
 }
 
 .preview-content h3{
-    font-size:25px;
+    font-size:30px;
     font-family: 'Pretendard', 'GmarketSans', 'Arial', sans-serif; 
     /* margin-bottom:20px; */
 }
@@ -197,7 +197,7 @@ body{ height:100%; overflow:hidden; background:#111; color:#fff; }
     display:flex;
     flex-wrap:wrap;
     gap:8px;
-    margin-bottom:25px;
+    margin-top:15px;
 }
 
 .tags span{
