@@ -69,16 +69,13 @@ body { margin: 0; background: #111; color: white; }
 /* 폰 이미지 */
 .phone{
     flex:1;
-    position:relative;
+    display:flex;
+    justify-content:center;
+    align-items:center;
     overflow:hidden;
 }
 .phone img{
-    position:absolute;
-    left:50%;
-    bottom:-120px;
-    transform:translateX(-50%);
-
-    height:115%;
+    max-height:100%;
     width:auto;
 }
 
