@@ -78,7 +78,7 @@ body { margin: 0; background: #111; color: white; }
     bottom:-120px;
     transform:translateX(-50%);
 
-    height:clamp(700px, 85vh, 950px);
+    height:115%;
     width:auto;
 }
 
