@@ -39,7 +39,7 @@ body { margin: 0; background: #111; color: white; }
 
 /* 왼쪽 */
 .left{
-    width:350px;
+    width:clamp(350px, 22vw, 450px);
     flex:none;
     display:flex;
     flex-direction:column;
