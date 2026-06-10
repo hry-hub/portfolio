@@ -88,8 +88,8 @@ body{ height:100%; overflow:hidden; background:#111; color:#fff; }
 .logo-item img{
     width:auto;
     height:auto;
-    max-width:80%;
-    max-height:60%;
+    max-width:70%;
+    max-height:50%;
     object-fit:contain;
 
     filter:grayscale(100%);
@@ -183,64 +183,43 @@ body{ height:100%; overflow:hidden; background:#111; color:#fff; }
 }
 
 .meta{
-
     color:#777;
-
     margin-bottom:15px;
 }
 
 .preview-content h3{
-
     font-size:25px;
     font-family: 'Pretendard', 'GmarketSans', 'Arial', sans-serif; 
     /* margin-bottom:20px; */
 }
 
 .tags{
-
     display:flex;
-
     flex-wrap:wrap;
-
     gap:8px;
-
     margin-bottom:25px;
 }
 
 .tags span{
-
     padding:8px 14px;
-
     background:#222;
-
     border-radius:100px;
-
     font-size:13px;
 }
 
 .url{
-
     color:#999;
-
     margin-bottom:25px;
-
     word-break:break-all;
 }
 
 .visit-btn{
-
     display:inline-flex;
-
     align-items:center;
-
     justify-content:center;
-
     height:55px;
-
     padding:0 30px;
-
     border-radius:999px;
-
     border:0.5px solid #fff;
     color:#fff;
 
