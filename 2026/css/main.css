@@ -260,7 +260,7 @@ body{ overflow-x:hidden; /*height:200vh;*/ }
 
   .info2 { margin-top:80px; }
   .info2>div div { width:60%; }
-  .skill table tr td { padding : 15px; }
+  /* .skill table tr td { padding : 15px; } */
 
   .bg1 { background-position: 84% center;}
   .bg2 { background-position: 90% center;}
