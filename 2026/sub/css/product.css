@@ -56,8 +56,10 @@ body { margin: 0; background: #111; color: white; }
 }
 .text-area h6::after { 
     content: "";
-    /* position: absolute; */
-    width: 15px;
+    position : relative;
+    margin: 30px auto;
+    display:block; 
+    width: 30px;
     height: 1px;
     top : 8px;
     background: #fff;
