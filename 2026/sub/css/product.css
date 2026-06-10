@@ -85,7 +85,7 @@ body { margin: 0; background: #111; color: white; }
     align-items:center;
 }
 .phone img{
-    width:300px;
+    width:100%;
     height:auto; 
 }
 /* 오른쪽 */
