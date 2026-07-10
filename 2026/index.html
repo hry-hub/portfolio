@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>SUNHEE | 포트폴리오</title>
+        <meta property="og:image" content="myimage.jpg">
+        <link rel="SHORTCUT ICON" href="favicon.ico" />
+        <meta name="description" content="SUNHEE 포트폴리오">
+        <meta property="og:description" content="SUNHEE 포트폴리오">
+
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+        <!--CSS-->
+        <link rel="stylesheet" href="css/style.css" type="text/css">
+        <link rel="stylesheet" href="css/main.css" type="text/css">
+        <link rel="stylesheet" href="css/fonts.css" type="text/css">
+
+        <!--구글폰트-->
+         <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Brygada+1918:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+
+        <!--폰트어썸-->
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" rel="stylesheet">
+
+		<!--우클릭 방지-->
+		<!-- <script>
+			document.addEventListener('contextmenu', function(e) {
+				e.preventDefault();
+			});
+		</script> -->
+    </head>
+
+    <body>
+
+    	<section class="main">
+            <div> <!-- 메인타이틀 + 롤링 텍스트 시작-->
+                <div class="text-wrap">
+                    <p>안녕하세요.<br>다재다능한 능력을 갖춘</p>
+                    <!--(-->
+                    <div>
+                        <div class="fixed-box">
+                                <div class="slide-texts" id="slide">
+                                        <span style="color:#000">웹 디자이너</span>
+                                        <span style="color:#000;">웹 퍼블리셔</span>
+                                        <span style="color:#000;">영상 편집자</span>
+                                        <span style="color:#000">콘텐츠 기획자</span>
+                                        <span style="color:#000;">웹 디자이너</span> <!-- 첫 번째를 복제해서 마지막에 추가 -->
+                                </div>
+                        </div><!--)-->
+                        <span class="intro-name"><b class="gra">신 선 희</b>입니다.</span>
+                    </div>
+                </div>
+                <script>
+                    const slide = document.getElementById('slide');
+                    const items = slide.querySelectorAll('span');
+                    const itemHeight = items[0].offsetHeight;
+                    let index = 0;
+                    const maxIndex = items.length - 1;
+                
+                    setInterval(() => {
+                            index++;
+                            slide.style.transition = 'transform 0.6s ease-in-out';
+                            slide.style.transform = `translateY(-${itemHeight * index}px)`;
+                    
+                            if (index === maxIndex) {
+                                    setTimeout(() => {
+                                            slide.style.transition = 'none'; // 순간이동시 transition 제거
+                                            slide.style.transform = `translateY(0px)`;
+                                            index = 0;
+                                    }, 600); // transition 시간과 동일하게
+                            }
+                    }, 2000);
+                </script>
+            </div> <!-- 메인 타이틀 + 롤링 텍스트 끝-->
+            <div class="info2"> <!-- 정보 시작 -->
+                <div>
+                    <div class="career"> <!--경력-->
+                        <h3><b>Career</b></h3>
+                        <ul>
+                            <li><em>2024.10 ~ 2026.04</em><i>제이엠커피그룹</i></li>
+                            <li><em>2023.09 ~ 2024.02</em><i>라라브레드</i></li>
+                            <li><em>2020.01 ~ 2022.09</em><i>모두 웹에이전시</i></li>
+                        </ul>
+                    </div>
+                    <div class="skill"> <!--스킬 & 툴-->
+                        <h3><b>Skill & Tool</b></h3>
+						<table>
+							<tr>
+								<td><img src="img/skill02.png"></td>
+								<td><img src="img/skill01.png"></td>
+								<td><img src="img/skill03.png"></td>
+								<td><img src="img/skill04.png"></td>
+								<td><img src="img/skill05.png"></td>
+							</tr>
+                            <tr>
+								<td><img src="img/skill06.png"></td>
+								<td><img src="img/skill07.png"></td>
+								<td><img src="img/skill11.png"></td>
+								<td><img src="img/skill08.png"></td>
+								<td><img src="img/skill09.png"></td> 
+							</tr>
+                        </table>
+                    </div>
+                    <div class="connect"> <!--연락처-->
+                        <h3><b>Connect</b></h3>
+                        <p>SHIN SUNHEE</p>
+                        <p><i class="fa-solid fa-mobile"></i>&nbsp;010-5031-1036</p>
+                        <p><i class="fa-solid fa-envelope"></i>&nbsp; sunhee0o@naver.com</p>
+                    </div>
+                </div>
+            </div> <!-- 정보 끝 -->
+    	</section>
+
+    	<section class="portfolio"> <!-- 포트폴리오 시작 -->
+
+        	<!-- 배경 -->
+        	<div class="bg bg1 active"></div>
+        	<div class="bg bg2"></div>
+        	<div class="bg bg3"></div>
+        	<div class="bg bg4"></div>
+        	<div class="bg bg5"></div>
+
+        	<div class="center-wrap">
+        	    <div class="category">
+
+        	        <div class="item active" data-index="1"> <!--디자인 (bg1)-->
+        	        	<div class="item-title">&nbsp;디자인 작업&nbsp;</div>
+        	            <div class="accordion">
+        	                <div class="inner">
+        	                    <h1>Design Project</h1>
+        	                    <p>홍보물 및 출력물 / 포스터 / X배너 등 디자인 작업물</p>
+        	                    <a href="sub/design.html">자세히 보기</a>
+        	                </div>
+        	            </div>
+        	        </div>
+
+                	<div class="item" data-index="2"> <!--상세페이지 (bg2)-->
+                	    <div class="item-title">&nbsp;상세페이지&nbsp;</div>
+                	    <div class="accordion">
+                	        <div class="inner">
+                	            <h1>Product Page</h1>
+                	            <p>기획안에 맞춰 제작된 다양한 제품의 <br class="mobile">상세페이지 및 랜딩 페이지 작업 진행 </p>
+                	            <a href="sub/product.html">자세히 보기</a>
+                	        </div>
+                	    </div>
+                	</div>
+
+      				<div class="item" data-index="3"> <!--홈페이지 제작 (bg3)-->
+      				  	<div class="item-title">&nbsp;홈페이지 제작&nbsp; </div>
+      				  	<div class="accordion">
+      				    	<div class="inner">
+      				    		<h1>Publishing</h1>
+      				    		<p>UI/UX 디자인 / 퍼블리싱 <br class="mobile">고객 니즈에 맞춘 홈페이지 제작</p>
+      				    		<a href="sub/publishing.html">자세히 보기</a> <!--homepage2.html-->
+      				    	</div>
+      				  	</div>
+      				</div>
+
+      				<div class="item" data-index="4"> <!--영상편집 (bg4)-->
+      				  	<div class="item-title">&nbsp;영상편집&nbsp;</div>
+      				  	<div class="accordion">
+      				    	<div class="inner">
+      				    	  	<h1>Video Editing</h1>
+      				    	  	<p>편집 및 기획, 게임유튜버 영상편집자 지원 영상</p>
+      				    	  	<a href="sub/video.html">자세히 보기</a>
+      				    	</div>
+      				  	</div>
+      				</div>
+
+      				<div class="item" data-index="5"> <!--마케팅 (bg5)-->
+      				  	<div class="item-title">&nbsp;SNS 기획&nbsp; </div>
+      				  	<div class="accordion">
+      				    	<div class="inner">
+      				    	  	<h1>SNS Marketing</h1>
+      				    	  	<p>콘텐츠 기획 및 촬영 / 피드 & 릴스 제작 / <br class="mobile">자사 SNS 관리</p>
+      				    	  	<a href="sub/sns.html">자세히 보기</a><!--sns2.html-->
+      				    	  	<!-- <a href="sub/sns.html">자세히 보기</a> -->
+      				    	</div>
+      				  	</div>
+      				</div>
+
+    			</div>
+  			</div>
+
+		</section> <!-- 포트폴리오 끝 -->
+
+		<script>
+
+            
+
+			    /* 기본 브라우저 휠 스크롤 막기 */
+window.addEventListener(
+    'wheel',
+    function(e){
+        e.preventDefault();
+    },
+    { passive:false }
+);
+
+window.addEventListener(
+    'touchmove',
+    function(e){
+
+        if(current === 1){
+            e.preventDefault();
+        }
+
+    },
+    { passive:false }
+);
+
+			/* 원페이지 스크롤 */
+			let isScrolling=false;
+			let current=0;
+
+			let touchStartY = 0;
+
+function handlePortfolioScroll(direction){
+
+    if(isScrolling) return;
+
+    // MAIN 상태
+    if(current === 0){
+
+        if(direction > 0){
+
+            isScrolling = true;
+            current = 1;
+
+            currentBg = 1;
+            changePortfolio(1);
+
+$("html,body").stop().animate({
+    scrollTop: $(".portfolio").offset().top
+},700,()=>{
+
+    window.scrollTo(
+        0,
+        $(".portfolio").offset().top
+    );
+
+    isScrolling = false;
+});
+        }
+
+        return;
+    }
+
+    // PORTFOLIO 상태
+    if(current === 1){
+
+        isScrolling = true;
+
+        // 아래
+        if(direction > 0){
+
+            if(currentBg < totalPortfolio){
+
+                changePortfolio(currentBg + 1);
+
+                setTimeout(()=>{
+                    isScrolling = false;
+                },700);
+
+            }else{
+
+                isScrolling = false;
+            }
+
+        }
+
+        // 위
+        else{
+
+            if(currentBg > 1){
+
+                changePortfolio(currentBg - 1);
+
+                setTimeout(()=>{
+                    isScrolling = false;
+                },700);
+
+            }else{
+
+                current = 0;
+
+$("html,body").stop().animate({
+    scrollTop:0
+},700,()=>{
+
+    window.scrollTo(0,0);
+
+    isScrolling = false;
+
+});
+
+            }
+
+        }
+    }
+}
+
+$(window).on("wheel", function(e){
+
+    e.preventDefault();
+
+    handlePortfolioScroll(
+        e.originalEvent.deltaY > 0 ? 1 : -1
+    );
+
+});
+
+			/* 배경 + 아코디언 */
+			let currentBg=1;
+			const totalPortfolio = 5;
+
+function changePortfolio(index){
+
+    $(".item").removeClass("active");
+    $('.item[data-index="'+index+'"]').addClass("active");
+
+    if(index !== currentBg){
+
+        let $current = $(".bg"+currentBg);
+        let $next = $(".bg"+index);
+
+        $current.addClass("prev");
+        $next.addClass("active");
+
+        setTimeout(()=>{
+            $current.removeClass("active prev");
+        },600);
+
+        currentBg = index;
+    }
+}
+
+$(".item").click(function(){
+
+    current = 1;
+    changePortfolio($(this).data("index"));
+
+});
+
+/*모바일 터치*/
+
+window.addEventListener("touchstart", function(e){
+
+    touchStartY = e.touches[0].clientY;
+
+}, { passive:true });
+
+window.addEventListener("touchend", function(e){
+
+    let touchEndY = e.changedTouches[0].clientY;
+
+    let diff = touchStartY - touchEndY;
+
+    // 민감도
+    if(Math.abs(diff) < 50) return;
+
+    handlePortfolioScroll(
+        diff > 0 ? 1 : -1
+    );
+
+}, { passive:true });
+
+$(window).on("load", function(){
+
+    const portfolioTop = $(".portfolio").offset().top;
+
+    if($(window).scrollTop() >= portfolioTop - 50){
+
+        current = 1;
+
+    }else{
+
+        current = 0;
+
+    }
+
+});
+
+		</script>
+
+	</body>
+</html>
